@@ -183,6 +183,7 @@ export const createConnections = (
               if (fromPort && toPort) {
                 const id =
                   output.nodeId + output.portName + node.id + inputName;
+
                 const existingLine: SVGPathElement | null = document.querySelector(
                   `[data-connection-id="${id}"]`
                 );

@@ -33,6 +33,7 @@ interface NodeProps {
   onDragStart: () => void;
   renderNodeHeader?: NodeHeaderRenderCallback;
   root?: boolean;
+  appendage?: React.ReactNode;
 }
 
 const Node = ({
@@ -46,7 +47,8 @@ const Node = ({
   inputData,
   root,
   onDragStart,
-  renderNodeHeader
+  renderNodeHeader,
+  appendage
 }: NodeProps) => {
   const cache = React.useContext(CacheContext) ?? undefined;
   const nodeTypes = React.useContext(NodeTypesContext) ?? {};
@@ -212,12 +214,20 @@ const Node = ({
       stageState={stageState}
       stageRect={stageRect}
     >
+      {appendage && <div>{appendage}</div>}
       {renderNodeHeader ? (
-        renderNodeHeader(NodeHeader, currentNodeType, {
-          openMenu: handleContextMenu,
-          closeMenu: closeContextMenu,
-          deleteNode
-        })
+        renderNodeHeader(
+          NodeHeader,
+          currentNodeType,
+          {
+            openMenu: handleContextMenu,
+            closeMenu: closeContextMenu,
+            deleteNode
+          },
+          {
+            nodeId: id
+          }
+        )
       ) : (
         <NodeHeader>{label}</NodeHeader>
       )}

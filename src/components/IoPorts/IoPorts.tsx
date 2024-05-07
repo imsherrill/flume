@@ -295,6 +295,7 @@ const Port = ({
     scale: 1,
     translate: { x: 0, y: 0 }
   };
+
   const editorId = React.useContext(EditorIdContext);
   const stageId = `${STAGE_ID}${editorId}`;
   const inputTypes = React.useContext(PortTypesContext) || {};
@@ -304,6 +305,7 @@ const Port = ({
     y: 0
   });
   const dragStartCoordinatesCache = React.useRef(dragStartCoordinates);
+
   const port = React.useRef<HTMLDivElement>(null);
   const line = React.useRef<SVGPathElement>(null);
   const lineInToPort = React.useRef<HTMLDivElement | null>(null);
@@ -485,7 +487,7 @@ const Port = ({
   return (
     <React.Fragment>
       <div
-        style={{ zIndex: 999 }}
+        style={{ zIndex: 999, position: "relative" }}
         onMouseDown={handleDragStart}
         className={styles.port}
         data-port-color={color}
@@ -504,13 +506,27 @@ const Port = ({
         <Portal
           node={document.getElementById(`${DRAG_CONNECTION_ID}${editorId}`)}
         >
-          <Connection
-            from={dragStartCoordinates}
-            to={dragStartCoordinates}
-            lineRef={line}
-          />
+          <>
+            <Connection
+              from={dragStartCoordinates}
+              to={dragStartCoordinates}
+              lineRef={line}
+            />
+          </>
         </Portal>
       ) : null}
+      {/* {!isInput && (
+        <p
+          style={{
+            position: "absolute",
+            zIndex: 9999,
+            left: "100%",
+            background: "white"
+          }}
+        >
+          hi
+        </p>
+      )} */}
     </React.Fragment>
   );
 };

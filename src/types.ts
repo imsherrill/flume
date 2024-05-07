@@ -1,4 +1,4 @@
-import { HTMLProps, ReactNode } from "react";
+import React, { HTMLProps, ReactNode } from "react";
 
 export type ControlData = { [controlName: string]: any };
 export type InputData = { [portName: string]: ControlData };
@@ -325,7 +325,13 @@ export type FlumeComment = {
   isNew: boolean;
 };
 
+export interface RichElement extends Omit<FlumeComment, "text"> {
+  children: ReactNode;
+}
+
 export type FlumeCommentMap = { [commentId: string]: FlumeComment };
+
+export type RichElementMap = { [commentId: string]: ReactNode };
 
 export type StageTranslate = {
   x: number;
@@ -353,7 +359,10 @@ export type NodeHeaderActions = {
 export type NodeHeaderRenderCallback = (
   Wrapper: React.FC<HTMLProps<HTMLHeadingElement>>,
   nodeType: NodeType,
-  actions: NodeHeaderActions
+  actions: NodeHeaderActions,
+  meta: {
+    nodeId: string;
+  }
 ) => ReactNode;
 
 export type PortResolver = (
