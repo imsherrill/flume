@@ -38,6 +38,7 @@ import {
   NodeMap,
   NodeTypeMap,
   PortTypeMap,
+  RichElementMap,
   Toast
 } from "./types";
 
@@ -45,6 +46,7 @@ const defaultContext = {};
 
 interface NodeEditorProps {
   comments?: FlumeCommentMap;
+  appendages?: RichElementMap;
   nodes?: NodeMap;
   nodeTypes: NodeTypeMap;
   portTypes: PortTypeMap;
@@ -53,6 +55,7 @@ interface NodeEditorProps {
   onChange?: (nodes: NodeMap) => void;
   onCommentsChange?: (comments: FlumeCommentMap) => void;
   initialScale?: number;
+  initialPan?: { x: number; y: number };
   spaceToPan?: boolean;
   hideComments?: boolean;
   disableComments?: boolean;
@@ -67,6 +70,7 @@ export let NodeEditor = React.forwardRef(
   (
     {
       comments: initialComments,
+      appendages,
       nodes: initialNodes,
       nodeTypes = {},
       portTypes = {},
@@ -75,6 +79,7 @@ export let NodeEditor = React.forwardRef(
       onChange,
       onCommentsChange,
       initialScale,
+      initialPan = { x: 0, y: 0 },
       spaceToPan = false,
       hideComments = false,
       disableComments = false,
@@ -126,7 +131,7 @@ export let NodeEditor = React.forwardRef(
 
     const [stageState, dispatchStageState] = React.useReducer(stageReducer, {
       scale: typeof initialScale === "number" ? clamp(initialScale, 0.1, 7) : 1,
-      translate: { x: 0, y: 0 }
+      translate: initialPan
     });
 
     const recalculateConnections = React.useCallback(() => {
@@ -154,8 +159,23 @@ export let NodeEditor = React.forwardRef(
       getNodes: () => {
         return nodes;
       },
+      setNodes: (newNodes: NodeMap) => {
+        dispatchNodes({
+          type: NodesActionType.HARD_SET_NODES,
+          nodes: getInitialNodes(
+            newNodes,
+            defaultNodes,
+            nodeTypes,
+            portTypes,
+            context
+          )
+        });
+      },
       getComments: () => {
         return comments;
+      },
+      getEditorViewSettings: () => {
+        return stageState;
       }
     }));
 
@@ -260,6 +280,7 @@ export let NodeEditor = React.forwardRef(
                               onDragStart={recalculateStageRect}
                               renderNodeHeader={renderNodeHeader}
                               key={node.id}
+                              appendage={appendages?.[node.id]}
                             />
                           ))}
                           <Connections editorId={editorId} />

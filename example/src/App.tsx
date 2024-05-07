@@ -605,16 +605,105 @@ const engine = new RootEngine(
 const App = () => {
   const [nodes, setNodes] = React.useState({});
   const [comments, setComments] = React.useState({});
+  const ref = React.useRef<any>(null);
+
   return (
     <div className="wrapper" style={{ lineHeight: 1.8 }}>
+      <button
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0
+        }}
+        onClick={() => {
+          ref.current.setNodes({
+            x_Zt2TbpCG: {
+              x: 1020,
+              y: -172,
+              type: "websiteAttributes",
+              width: 160,
+              connections: {
+                inputs: {
+                  bodyWidth: [
+                    {
+                      nodeId: "gHTeEOBRdo",
+                      portName: "result"
+                    }
+                  ]
+                },
+                outputs: {}
+              },
+              inputData: {
+                title: {
+                  text: ""
+                },
+                description: {
+                  text: ""
+                },
+                showLogin: {
+                  boolean: false
+                },
+                showDashboard: {
+                  boolean: false
+                },
+                showBody: {
+                  boolean: false
+                },
+                bodyWidth: {
+                  num: 0
+                },
+                bodyHeight: {
+                  num: 0
+                }
+              },
+              root: true,
+              id: "x_Zt2TbpCG"
+            },
+            gHTeEOBRdo: {
+              id: "gHTeEOBRdo",
+              x: 669.5,
+              y: -187,
+              type: "addNumbers",
+              width: 150,
+              connections: {
+                inputs: {},
+                outputs: {
+                  result: [
+                    {
+                      nodeId: "x_Zt2TbpCG",
+                      portName: "bodyWidth"
+                    }
+                  ]
+                }
+              },
+              inputData: {
+                num1: {
+                  num: 0
+                },
+                num2: {
+                  num: 0
+                }
+              }
+            }
+          });
+        }}
+      >
+        Add Nodes
+      </button>
       <NodeEditor
+        ref={ref}
         portTypes={flumeConfig.portTypes}
         nodeTypes={flumeConfig.nodeTypes}
         nodes={nodes}
         comments={comments}
         onChange={setNodes}
         onCommentsChange={setComments}
+        initialPan={{ x: 300, y: -30 }}
+        initialScale={0.8}
         // disableZoom
+        appendages={{
+          x_Zt2TbpCG: <div style={{ color: "red", padding: 10 }}>testing</div>
+        }}
         defaultNodes={[
           {
             type: "websiteAttributes",
@@ -622,10 +711,19 @@ const App = () => {
             y: -200
           }
         ]}
-        renderNodeHeader={(Wrapper, nodeType, actions) => {
+        renderNodeHeader={(Wrapper, nodeType, actions, meta) => {
           return (
             <Wrapper style={{ display: "flex" }}>
-              {nodeType.label}
+              <div>
+                <p>{nodeType.label}</p>
+                <button
+                  onClick={() => {
+                    console.log(ref.current.getEditorViewSettings());
+                  }}
+                >
+                  {meta.nodeId}
+                </button>
+              </div>
               {nodeType.type === "employee" ? (
                 <button
                   style={{

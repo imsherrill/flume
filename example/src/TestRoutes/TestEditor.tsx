@@ -63,6 +63,14 @@ const TestEditor = () => {
         nodeTypes={config.nodeTypes}
         nodes={{}}
         debug
+        renderNodeHeader={(Wrapper, nodeType, actions, meta) => {
+          return (
+            <Wrapper>
+              <div style={{ color: "blue" }}>{nodeType.label}</div>
+              <button onClick={actions.removeNode}>Remove</button>
+            </Wrapper>
+          );
+        }}
       />
       <div id="OUTPUT" style={{ display: "none" }}>
         {output}

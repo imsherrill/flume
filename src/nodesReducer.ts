@@ -276,6 +276,7 @@ export enum NodesActionType {
   DESTROY_TRANSPUT = "DESTROY_TRANSPUT",
   ADD_NODE = "ADD_NODE",
   REMOVE_NODE = "REMOVE_NODE",
+  HARD_SET_NODES = "HARD_SET_NODES",
   HYDRATE_DEFAULT_NODES = "HYDRATE_DEFAULT_NODES",
   SET_PORT_DATA = "SET_PORT_DATA",
   SET_NODE_COORDINATES = "SET_NODE_COORDINATES"
@@ -322,6 +323,10 @@ export type NodesAction =
       x: number;
       y: number;
       nodeId: string;
+    }
+  | {
+      type: NodesActionType.HARD_SET_NODES;
+      nodes: NodeMap;
     };
 
 interface FlumeEnvironment {
@@ -485,6 +490,10 @@ const nodesReducer = (
           y
         }
       };
+    }
+
+    case NodesActionType.HARD_SET_NODES: {
+      return action.nodes;
     }
 
     default:
