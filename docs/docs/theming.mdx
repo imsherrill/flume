@@ -9,7 +9,7 @@ All required styles are automatically included with the `NodeEditor`, but each F
 For example, you can change the background color of the nodes with the following CSS:
 
 ```css
-[data-flume-component="node"]{
+[data-flume-component="node"] {
   background: #ffffff;
 }
 ```
@@ -62,8 +62,9 @@ The following is a comprehensive list of all available data attributes. Each com
 
 In some cases you may want to style some nodes based on their type. There are a few dynamic data attributes you can use for this.
 
-- `data-flume-node-type=[nodeType]` 
+- `data-flume-node-type=[nodeType]`
 - `data-flume-component-is-root=[boolean]`
+- `data-flume-has-appendage=[boolean]`
 - `data-port-color=[color]`
 - `data-port-name=[portName]`
 - `data-port-type=[portType]
@@ -73,7 +74,7 @@ For example, to target a node with type `addNumbers` you could add this to your 
 ```css
 [data-flume-node-type="addNumbers"] {
   background: linear-gradient(to top, #4e2020 0%, #20204e 100%);
-  border: 1px solid rgba(255,255,255,.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   color: #fff;
 }
 [data-flume-node-type="addNumbers"] [data-flume-component="node-header"] {
@@ -81,6 +82,6 @@ For example, to target a node with type `addNumbers` you could add this to your 
 }
 ```
 
-import {DynamicThemingExample} from '../components/DynamicThemingExample'
+import { DynamicThemingExample } from "../components/DynamicThemingExample";
 
 <DynamicThemingExample />
