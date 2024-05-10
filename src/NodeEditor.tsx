@@ -39,6 +39,8 @@ import {
   NodeTypeMap,
   PortTypeMap,
   RichElementMap,
+  StageState,
+  StageTranslate,
   Toast
 } from "./types";
 
@@ -56,6 +58,7 @@ interface NodeEditorProps {
   onCommentsChange?: (comments: FlumeCommentMap) => void;
   initialScale?: number;
   initialPan?: { x: number; y: number };
+  onStageChange?: (stageState: StageState) => void;
   spaceToPan?: boolean;
   hideComments?: boolean;
   disableComments?: boolean;
@@ -80,6 +83,7 @@ export let NodeEditor = React.forwardRef(
       onCommentsChange,
       initialScale,
       initialPan = { x: 0, y: 0 },
+      onStageChange,
       spaceToPan = false,
       hideComments = false,
       disableComments = false,
@@ -133,6 +137,10 @@ export let NodeEditor = React.forwardRef(
       scale: typeof initialScale === "number" ? clamp(initialScale, 0.1, 7) : 1,
       translate: initialPan
     });
+
+    React.useEffect(() => {
+      onStageChange?.(stageState);
+    }, [stageState, onStageChange]);
 
     const recalculateConnections = React.useCallback(() => {
       createConnections(nodes, stageState, editorId);

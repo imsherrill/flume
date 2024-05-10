@@ -26,7 +26,9 @@ export type StageAction =
       scale: number;
     };
 
-export type StageActionSetter = StageAction | ((state: StageState) => StageAction);
+export type StageActionSetter =
+  | StageAction
+  | ((state: StageState) => StageAction);
 
 export default (state: StageState, incomingAction: StageActionSetter) => {
   let action =

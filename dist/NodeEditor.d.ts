@@ -1,5 +1,5 @@
 import React from "react";
-import { CircularBehavior, DefaultNode, FlumeCommentMap, NodeHeaderRenderCallback, NodeMap, NodeTypeMap, PortTypeMap, RichElementMap } from "./types";
+import { CircularBehavior, DefaultNode, FlumeCommentMap, NodeHeaderRenderCallback, NodeMap, NodeTypeMap, PortTypeMap, RichElementMap, StageState } from "./types";
 interface NodeEditorProps {
     comments?: FlumeCommentMap;
     appendages?: RichElementMap;
@@ -15,6 +15,7 @@ interface NodeEditorProps {
         x: number;
         y: number;
     };
+    onStageChange?: (stageState: StageState) => void;
     spaceToPan?: boolean;
     hideComments?: boolean;
     disableComments?: boolean;

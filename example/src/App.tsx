@@ -701,8 +701,23 @@ const App = () => {
         initialPan={{ x: 300, y: -30 }}
         initialScale={0.8}
         // disableZoom
+        onStageChange={stageState => {
+          console.log(stageState);
+        }}
         appendages={{
-          x_Zt2TbpCG: <div style={{ color: "red", padding: 10 }}>testing</div>
+          x_Zt2TbpCG: (
+            <div
+              style={{
+                color: "white",
+                padding: 10,
+                backgroundColor: "green",
+                width: "100%",
+                textAlign: "center"
+              }}
+            >
+              testing
+            </div>
+          )
         }}
         defaultNodes={[
           {

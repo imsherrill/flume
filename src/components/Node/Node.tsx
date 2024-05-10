@@ -210,11 +210,23 @@ const Node = ({
       data-flume-component="node"
       data-flume-node-type={currentNodeType.type}
       data-flume-component-is-root={!!root}
+      data-flume-has-appendage={!!appendage}
       onContextMenu={handleContextMenu}
       stageState={stageState}
       stageRect={stageRect}
     >
-      {appendage && <div>{appendage}</div>}
+      {appendage && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "100%",
+            left: 0,
+            right: 0
+          }}
+        >
+          {appendage}
+        </div>
+      )}
       {renderNodeHeader ? (
         renderNodeHeader(
           NodeHeader,
