@@ -7068,11 +7068,33 @@ var Node = function Node(_ref) {
     }
   };
 
+  var _React$useState5 = React__default["default"].useState(undefined),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      appendageHeight = _React$useState6[0],
+      setAppendageHeight = _React$useState6[1];
+
+  React__default["default"].useEffect(function () {
+    if (appendage) {
+      var _htmlNode$getBounding;
+
+      var htmlNode = document.querySelector("[data-node-appendage=\"".concat(id, "\"]"));
+      var height = (_htmlNode$getBounding = htmlNode === null || htmlNode === void 0 ? void 0 : htmlNode.getBoundingClientRect().height) !== null && _htmlNode$getBounding !== void 0 ? _htmlNode$getBounding : 0;
+      console.log({
+        height: height
+      });
+      setAppendageHeight(Math.round(height));
+    }
+  }, [appendage]);
+  console.log({
+    appendageHeight: appendageHeight
+  });
   return /*#__PURE__*/React__default["default"].createElement(Draggable, {
     className: styles$a.wrapper,
     style: {
       width: width,
-      transform: "translate(".concat(x, "px, ").concat(y, "px)")
+      transform: "translate(".concat(x, "px, ").concat(y, "px)") // marginTop:
+      //   appendage && appendageHeight ? `-${appendageHeight}px` : undefined
+
     },
     onDragStart: startDrag,
     onDrag: handleDrag,
@@ -7087,11 +7109,12 @@ var Node = function Node(_ref) {
     stageState: stageState,
     stageRect: stageRect
   }, appendage && /*#__PURE__*/React__default["default"].createElement("div", {
+    "data-node-appendage": id,
     style: {
       position: "absolute",
       bottom: "100%",
       left: 0,
-      right: 0
+      width: "100%"
     }
   }, appendage), renderNodeHeader ? renderNodeHeader(NodeHeader, currentNodeType, {
     openMenu: handleContextMenu,
@@ -8095,6 +8118,18 @@ var NodeEditor = /*#__PURE__*/React__default["default"].forwardRef(function (_re
       },
       getEditorViewSettings: function getEditorViewSettings() {
         return stageState;
+      },
+      setZoom: function setZoom(scale) {
+        dispatchStageState({
+          type: StageActionType.SET_SCALE,
+          scale: scale
+        });
+      },
+      setPan: function setPan(translate) {
+        dispatchStageState({
+          type: StageActionType.SET_TRANSLATE,
+          translate: translate
+        });
       }
     };
   });

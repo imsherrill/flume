@@ -24,7 +24,7 @@ import nodesReducer, {
 } from "./nodesReducer";
 import commentsReducer from "./commentsReducer";
 import toastsReducer, { ToastAction } from "./toastsReducer";
-import stageReducer from "./stageReducer";
+import stageReducer, { StageActionType } from "./stageReducer";
 import usePrevious from "./hooks/usePrevious";
 import clamp from "lodash/clamp";
 import Cache from "./Cache";
@@ -184,6 +184,18 @@ export let NodeEditor = React.forwardRef(
       },
       getEditorViewSettings: () => {
         return stageState;
+      },
+      setZoom: (scale: StageState["scale"]) => {
+        dispatchStageState({
+          type: StageActionType.SET_SCALE,
+          scale
+        });
+      },
+      setPan: (translate: StageState["translate"]) => {
+        dispatchStageState({
+          type: StageActionType.SET_TRANSLATE,
+          translate
+        });
       }
     }));
 

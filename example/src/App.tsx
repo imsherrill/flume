@@ -605,6 +605,7 @@ const engine = new RootEngine(
 const App = () => {
   const [nodes, setNodes] = React.useState({});
   const [comments, setComments] = React.useState({});
+  const [showHats, setShowHats] = React.useState(true);
   const ref = React.useRef<any>(null);
 
   return (
@@ -690,6 +691,43 @@ const App = () => {
       >
         Add Nodes
       </button>
+      <button
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 100
+        }}
+        onClick={() => {
+          ref.current.setZoom(Math.random() * 1.5);
+        }}
+      >
+        set zoom
+      </button>
+      <button
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 200
+        }}
+        onClick={() => {
+          ref.current.setPan({
+            x: Math.random() * 100 - 50,
+            y: Math.random() * 100 - 50
+          });
+        }}
+      >
+        set pan
+      </button>
+      <input
+        type="checkbox"
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 300
+        }}
+        checked={showHats}
+        onChange={() => setShowHats(!showHats)}
+      />
       <NodeEditor
         ref={ref}
         portTypes={flumeConfig.portTypes}
@@ -702,23 +740,27 @@ const App = () => {
         initialScale={0.8}
         // disableZoom
         onStageChange={stageState => {
-          console.log(stageState);
+          // console.log(stageState);
         }}
-        appendages={{
-          x_Zt2TbpCG: (
-            <div
-              style={{
-                color: "white",
-                padding: 10,
-                backgroundColor: "green",
-                width: "100%",
-                textAlign: "center"
-              }}
-            >
-              testing
-            </div>
-          )
-        }}
+        appendages={
+          showHats
+            ? {
+                x_Zt2TbpCG: (
+                  <div
+                    style={{
+                      color: "white",
+                      padding: 10,
+                      backgroundColor: "green",
+                      width: "100%",
+                      textAlign: "center"
+                    }}
+                  >
+                    testing
+                  </div>
+                )
+              }
+            : undefined
+        }
         defaultNodes={[
           {
             type: "websiteAttributes",

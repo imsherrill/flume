@@ -195,12 +195,28 @@ const Node = ({
     }
   };
 
+  const [appendageHeight, setAppendageHeight] = React.useState<
+    number | undefined
+  >(undefined);
+
+  React.useEffect(() => {
+    if (appendage) {
+      const htmlNode = document.querySelector(`[data-node-appendage="${id}"]`);
+      const height = htmlNode?.getBoundingClientRect().height ?? 0;
+      console.log({ height });
+      setAppendageHeight(Math.round(height));
+    }
+  }, [appendage]);
+
+  console.log({ appendageHeight });
   return (
     <Draggable
       className={styles.wrapper}
       style={{
         width,
         transform: `translate(${x}px, ${y}px)`
+        // marginTop:
+        //   appendage && appendageHeight ? `-${appendageHeight}px` : undefined
       }}
       onDragStart={startDrag}
       onDrag={handleDrag}
@@ -217,11 +233,12 @@ const Node = ({
     >
       {appendage && (
         <div
+          data-node-appendage={id}
           style={{
             position: "absolute",
             bottom: "100%",
             left: 0,
-            right: 0
+            width: "100%"
           }}
         >
           {appendage}
