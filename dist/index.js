@@ -7085,7 +7085,14 @@ var Node = function Node(_ref) {
     onContextMenu: handleContextMenu,
     stageState: stageState,
     stageRect: stageRect
-  }, appendage && /*#__PURE__*/React__default["default"].createElement("div", null, appendage), renderNodeHeader ? renderNodeHeader(NodeHeader, currentNodeType, {
+  }, appendage && /*#__PURE__*/React__default["default"].createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: "100%",
+      left: 0,
+      right: 0
+    }
+  }, appendage), renderNodeHeader ? renderNodeHeader(NodeHeader, currentNodeType, {
     openMenu: handleContextMenu,
     closeMenu: closeContextMenu,
     deleteNode: deleteNode
@@ -7986,6 +7993,7 @@ var NodeEditor = /*#__PURE__*/React__default["default"].forwardRef(function (_re
     x: 0,
     y: 0
   } : _ref$initialPan,
+      onStageChange = _ref.onStageChange,
       _ref$spaceToPan = _ref.spaceToPan,
       spaceToPan = _ref$spaceToPan === void 0 ? false : _ref$spaceToPan,
       _ref$hideComments = _ref.hideComments,
@@ -8050,6 +8058,9 @@ var NodeEditor = /*#__PURE__*/React__default["default"].forwardRef(function (_re
       stageState = _React$useReducer8[0],
       dispatchStageState = _React$useReducer8[1];
 
+  React__default["default"].useEffect(function () {
+    onStageChange === null || onStageChange === void 0 ? void 0 : onStageChange(stageState);
+  }, [stageState, onStageChange]);
   var recalculateConnections = React__default["default"].useCallback(function () {
     createConnections(nodes, stageState, editorId);
   }, [nodes, editorId, stageState]);

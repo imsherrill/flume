@@ -214,7 +214,18 @@ const Node = ({
       stageState={stageState}
       stageRect={stageRect}
     >
-      {appendage && <div>{appendage}</div>}
+      {appendage && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "100%",
+            left: 0,
+            right: 0
+          }}
+        >
+          {appendage}
+        </div>
+      )}
       {renderNodeHeader ? (
         renderNodeHeader(
           NodeHeader,

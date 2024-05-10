@@ -139,7 +139,7 @@ const Stage = ({
             scale: newScale,
             translate: {
               x: currentTranslate.x + xDistance * newScale,
-              y: currentTranslate.y + yDistance * newScale
+              y: currentTranslate.y + yDistance * newScale;
             }
           };
         });
