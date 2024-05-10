@@ -7069,9 +7069,6 @@ var Node = function Node(_ref) {
 
       var htmlNode = document.querySelector("[data-node-appendage=\"".concat(id, "\"]"));
       var height = (_htmlNode$getBounding = htmlNode === null || htmlNode === void 0 ? void 0 : htmlNode.getBoundingClientRect().height) !== null && _htmlNode$getBounding !== void 0 ? _htmlNode$getBounding : 0;
-      console.log({
-        height: height
-      });
       setAppendageHeight(Math.round(height));
     }
   }, [appendage]);
