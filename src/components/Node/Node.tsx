@@ -203,7 +203,6 @@ const Node = ({
     if (appendage) {
       const htmlNode = document.querySelector(`[data-node-appendage="${id}"]`);
       const height = htmlNode?.getBoundingClientRect().height ?? 0;
-      console.log({ height });
       setAppendageHeight(Math.round(height));
     }
   }, [appendage]);
