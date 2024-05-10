@@ -208,7 +208,6 @@ const Node = ({
     }
   }, [appendage]);
 
-  console.log({ appendageHeight });
   return (
     <Draggable
       className={styles.wrapper}

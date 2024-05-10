@@ -7059,9 +7059,9 @@ var Node = function Node(_ref) {
   };
 
   var _React$useState5 = React.useState(undefined),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      appendageHeight = _React$useState6[0],
-      setAppendageHeight = _React$useState6[1];
+      _React$useState6 = _slicedToArray(_React$useState5, 2);
+      _React$useState6[0];
+      var setAppendageHeight = _React$useState6[1];
 
   React.useEffect(function () {
     if (appendage) {
@@ -7075,9 +7075,6 @@ var Node = function Node(_ref) {
       setAppendageHeight(Math.round(height));
     }
   }, [appendage]);
-  console.log({
-    appendageHeight: appendageHeight
-  });
   return /*#__PURE__*/React.createElement(Draggable, {
     className: styles$a.wrapper,
     style: {
