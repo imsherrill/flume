@@ -7082,6 +7082,7 @@ var Node = function Node(_ref) {
     "data-flume-component": "node",
     "data-flume-node-type": currentNodeType.type,
     "data-flume-component-is-root": !!root,
+    "data-flume-has-appendage": !!appendage,
     onContextMenu: handleContextMenu,
     stageState: stageState,
     stageRect: stageRect
