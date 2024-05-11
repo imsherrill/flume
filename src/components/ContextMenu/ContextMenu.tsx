@@ -70,7 +70,9 @@ const ContextMenu = ({
 
   React.useEffect(() => {
     if (filterInput.current) {
-      filterInput.current.focus();
+      filterInput.current.focus({
+        preventScroll: true
+      });
     }
     setMenuWidth(menuWrapper.current?.getBoundingClientRect()?.width ?? 0);
     document.addEventListener("keydown", testEscape, { capture: true });

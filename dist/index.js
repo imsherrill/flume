@@ -894,7 +894,9 @@ var ContextMenu = function ContextMenu(_ref) {
     var _menuWrapper$current$, _menuWrapper$current, _menuWrapper$current$2;
 
     if (filterInput.current) {
-      filterInput.current.focus();
+      filterInput.current.focus({
+        preventScroll: true
+      });
     }
 
     setMenuWidth((_menuWrapper$current$ = (_menuWrapper$current = menuWrapper.current) === null || _menuWrapper$current === void 0 ? void 0 : (_menuWrapper$current$2 = _menuWrapper$current.getBoundingClientRect()) === null || _menuWrapper$current$2 === void 0 ? void 0 : _menuWrapper$current$2.width) !== null && _menuWrapper$current$ !== void 0 ? _menuWrapper$current$ : 0);
@@ -5809,7 +5811,9 @@ var Stage = function Stage(_ref) {
   var handleDragDelayStart = function handleDragDelayStart() {
     var _wrapper$current2;
 
-    (_wrapper$current2 = wrapper.current) === null || _wrapper$current2 === void 0 ? void 0 : _wrapper$current2.focus();
+    (_wrapper$current2 = wrapper.current) === null || _wrapper$current2 === void 0 ? void 0 : _wrapper$current2.focus({
+      preventScroll: true
+    });
   };
 
   var handleDragStart = function handleDragStart(event) {
