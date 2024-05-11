@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 body {
@@ -7,17 +7,28 @@ body {
   font-family: sans-serif;
   background: rgb(17, 18, 19);
 }
-.wrapper{
+.wrapper {
   width: 1600px;
   height: 900px;
 }
-#root{
+#root {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding-top: 50px;
 }
-.website-wrapper{
+.website-wrapper {
   color: #fff;
+}
+
+[data-flume-component="node"] {
+  &[data-flume-has-appendage="true"] [data-flume-component="node-header"] {
+    border: 1px solid orange;
+  }
+
+  &[data-flume-is-dragging="true"] {
+    opacity: 0.7;
+    border: 1px solid blue;
+  }
 }

@@ -6942,6 +6942,11 @@ var Node = function Node(_ref) {
       menuCoordinates = _React$useState4[0],
       setMenuCoordinates = _React$useState4[1];
 
+  var _React$useState5 = React.useState(false),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      isDragging = _React$useState6[0],
+      setIsDragging = _React$useState6[1];
+
   var byScale = function byScale(value) {
     return 1 / stageState.scale * value;
   };
@@ -7002,6 +7007,7 @@ var Node = function Node(_ref) {
   };
 
   var stopDrag = function stopDrag(e, coordinates) {
+    setIsDragging(false);
     nodesDispatch === null || nodesDispatch === void 0 ? void 0 : nodesDispatch(_objectSpread$5(_objectSpread$5({
       type: NodesActionType.SET_NODE_COORDINATES
     }, coordinates), {}, {
@@ -7020,6 +7026,7 @@ var Node = function Node(_ref) {
   };
 
   var startDrag = function startDrag() {
+    setIsDragging(true);
     onDragStart();
   };
 
@@ -7058,10 +7065,10 @@ var Node = function Node(_ref) {
     }
   };
 
-  var _React$useState5 = React.useState(undefined),
-      _React$useState6 = _slicedToArray(_React$useState5, 2);
-      _React$useState6[0];
-      var setAppendageHeight = _React$useState6[1];
+  var _React$useState7 = React.useState(undefined),
+      _React$useState8 = _slicedToArray(_React$useState7, 2);
+      _React$useState8[0];
+      var setAppendageHeight = _React$useState8[1];
 
   React.useEffect(function () {
     if (appendage) {
@@ -7072,6 +7079,7 @@ var Node = function Node(_ref) {
       setAppendageHeight(Math.round(height));
     }
   }, [appendage]);
+  console.log(isDragging);
   return /*#__PURE__*/React.createElement(Draggable, {
     className: styles$a.wrapper,
     style: {
@@ -7087,6 +7095,7 @@ var Node = function Node(_ref) {
     "data-node-id": id,
     "data-flume-component": "node",
     "data-flume-node-type": currentNodeType.type,
+    "data-flume-is-dragging": isDragging,
     "data-flume-component-is-root": !!root,
     "data-flume-has-appendage": !!appendage,
     onContextMenu: handleContextMenu,
@@ -8068,6 +8077,7 @@ var NodeEditor = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
 
   React.useEffect(function () {
     onStageChange === null || onStageChange === void 0 ? void 0 : onStageChange(stageState);
+    setShouldRecalculateConnections(true);
   }, [stageState, onStageChange]);
   var recalculateConnections = React.useCallback(function () {
     createConnections(nodes, stageState, editorId);
