@@ -7089,7 +7089,6 @@ var Node = function Node(_ref) {
       setAppendageHeight(Math.round(height));
     }
   }, [appendage]);
-  console.log(isDragging);
   return /*#__PURE__*/React__default["default"].createElement(Draggable, {
     className: styles$a.wrapper,
     style: {

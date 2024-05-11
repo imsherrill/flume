@@ -210,8 +210,6 @@ const Node = ({
     }
   }, [appendage]);
 
-  console.log(isDragging);
-
   return (
     <Draggable
       className={styles.wrapper}
