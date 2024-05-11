@@ -149,7 +149,9 @@ const Stage = ({
   );
 
   const handleDragDelayStart = () => {
-    wrapper.current?.focus();
+    wrapper.current?.focus({
+      preventScroll: true
+    });
   };
 
   const handleDragStart = (event: React.MouseEvent | React.TouchEvent) => {
