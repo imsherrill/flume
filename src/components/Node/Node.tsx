@@ -63,6 +63,7 @@ const Node = ({
   const nodeWrapper = React.useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [menuCoordinates, setMenuCoordinates] = React.useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = React.useState(false);
 
   const byScale = (value: number) => (1 / stageState.scale) * value;
 
@@ -148,6 +149,7 @@ const Node = ({
   };
 
   const stopDrag = (e: any, coordinates: Coordinate) => {
+    setIsDragging(false);
     nodesDispatch?.({
       type: NodesActionType.SET_NODE_COORDINATES,
       ...coordinates,
@@ -163,6 +165,7 @@ const Node = ({
   };
 
   const startDrag = () => {
+    setIsDragging(true);
     onDragStart();
   };
 
@@ -223,6 +226,7 @@ const Node = ({
       data-node-id={id}
       data-flume-component="node"
       data-flume-node-type={currentNodeType.type}
+      data-flume-is-dragging={isDragging}
       data-flume-component-is-root={!!root}
       data-flume-has-appendage={!!appendage}
       onContextMenu={handleContextMenu}

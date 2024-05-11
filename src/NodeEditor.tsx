@@ -140,6 +140,7 @@ export let NodeEditor = React.forwardRef(
 
     React.useEffect(() => {
       onStageChange?.(stageState);
+      setShouldRecalculateConnections(true);
     }, [stageState, onStageChange]);
 
     const recalculateConnections = React.useCallback(() => {
