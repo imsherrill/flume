@@ -1,4 +1,5 @@
 import React from "react";
+import "@mantine/core/styles.css";
 import "normalize.css";
 import {
   NodeEditor,
@@ -9,6 +10,7 @@ import {
   useRootEngine,
   NodeMap
 } from "node-editor";
+import { MantineProvider } from "@mantine/core";
 
 const colors = [
   "#2196f3",
@@ -609,204 +611,206 @@ const App = () => {
   const ref = React.useRef<any>(null);
 
   return (
-    <div className="wrapper" style={{ lineHeight: 1.8 }}>
-      <button
-        style={{
-          position: "absolute",
-          top: 0,
-          right: 0
-        }}
-        onClick={() => {
-          ref.current.setNodes({
-            x_Zt2TbpCG: {
-              x: 1020,
-              y: -172,
-              type: "websiteAttributes",
-              width: 160,
-              connections: {
-                inputs: {
-                  bodyWidth: [
-                    {
-                      nodeId: "gHTeEOBRdo",
-                      portName: "result"
-                    }
-                  ]
+    <MantineProvider>
+      <div className="wrapper" style={{ lineHeight: 1.8 }}>
+        <button
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0
+          }}
+          onClick={() => {
+            ref.current.setNodes({
+              x_Zt2TbpCG: {
+                x: 1020,
+                y: -172,
+                type: "websiteAttributes",
+                width: 160,
+                connections: {
+                  inputs: {
+                    bodyWidth: [
+                      {
+                        nodeId: "gHTeEOBRdo",
+                        portName: "result"
+                      }
+                    ]
+                  },
+                  outputs: {}
                 },
-                outputs: {}
+                inputData: {
+                  title: {
+                    text: ""
+                  },
+                  description: {
+                    text: ""
+                  },
+                  showLogin: {
+                    boolean: false
+                  },
+                  showDashboard: {
+                    boolean: false
+                  },
+                  showBody: {
+                    boolean: false
+                  },
+                  bodyWidth: {
+                    num: 0
+                  },
+                  bodyHeight: {
+                    num: 0
+                  }
+                },
+                root: true,
+                id: "x_Zt2TbpCG"
               },
-              inputData: {
-                title: {
-                  text: ""
+              gHTeEOBRdo: {
+                id: "gHTeEOBRdo",
+                x: 669.5,
+                y: -187,
+                type: "addNumbers",
+                width: 150,
+                connections: {
+                  inputs: {},
+                  outputs: {
+                    result: [
+                      {
+                        nodeId: "x_Zt2TbpCG",
+                        portName: "bodyWidth"
+                      }
+                    ]
+                  }
                 },
-                description: {
-                  text: ""
-                },
-                showLogin: {
-                  boolean: false
-                },
-                showDashboard: {
-                  boolean: false
-                },
-                showBody: {
-                  boolean: false
-                },
-                bodyWidth: {
-                  num: 0
-                },
-                bodyHeight: {
-                  num: 0
-                }
-              },
-              root: true,
-              id: "x_Zt2TbpCG"
-            },
-            gHTeEOBRdo: {
-              id: "gHTeEOBRdo",
-              x: 669.5,
-              y: -187,
-              type: "addNumbers",
-              width: 150,
-              connections: {
-                inputs: {},
-                outputs: {
-                  result: [
-                    {
-                      nodeId: "x_Zt2TbpCG",
-                      portName: "bodyWidth"
-                    }
-                  ]
-                }
-              },
-              inputData: {
-                num1: {
-                  num: 0
-                },
-                num2: {
-                  num: 0
+                inputData: {
+                  num1: {
+                    num: 0
+                  },
+                  num2: {
+                    num: 0
+                  }
                 }
               }
+            });
+          }}
+        >
+          Add Nodes
+        </button>
+        <button
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 100
+          }}
+          onClick={() => {
+            ref.current.setZoom(Math.random() * 1.5);
+          }}
+        >
+          set zoom
+        </button>
+        <button
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 200
+          }}
+          onClick={() => {
+            ref.current.setPan({
+              x: Math.random() * 100 - 50,
+              y: Math.random() * 100 - 50
+            });
+          }}
+        >
+          set pan
+        </button>
+        <input
+          type="checkbox"
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 300
+          }}
+          checked={showHats}
+          onChange={() => setShowHats(!showHats)}
+        />
+        <NodeEditor
+          ref={ref}
+          portTypes={flumeConfig.portTypes}
+          nodeTypes={flumeConfig.nodeTypes}
+          nodes={nodes}
+          comments={comments}
+          onChange={setNodes}
+          onCommentsChange={setComments}
+          initialPan={{ x: 300, y: -30 }}
+          initialScale={0.8}
+          // disableZoom
+          onStageChange={stageState => {
+            // console.log(stageState);
+          }}
+          appendages={
+            showHats
+              ? {
+                  x_Zt2TbpCG: (
+                    <div
+                      style={{
+                        color: "white",
+                        padding: 10,
+                        backgroundColor: "green",
+                        width: "100%",
+                        textAlign: "center"
+                      }}
+                    >
+                      testing
+                    </div>
+                  )
+                }
+              : undefined
+          }
+          defaultNodes={[
+            {
+              type: "websiteAttributes",
+              x: 400,
+              y: -200
             }
-          });
-        }}
-      >
-        Add Nodes
-      </button>
-      <button
-        style={{
-          position: "absolute",
-          top: 0,
-          right: 100
-        }}
-        onClick={() => {
-          ref.current.setZoom(Math.random() * 1.5);
-        }}
-      >
-        set zoom
-      </button>
-      <button
-        style={{
-          position: "absolute",
-          top: 0,
-          right: 200
-        }}
-        onClick={() => {
-          ref.current.setPan({
-            x: Math.random() * 100 - 50,
-            y: Math.random() * 100 - 50
-          });
-        }}
-      >
-        set pan
-      </button>
-      <input
-        type="checkbox"
-        style={{
-          position: "absolute",
-          top: 0,
-          right: 300
-        }}
-        checked={showHats}
-        onChange={() => setShowHats(!showHats)}
-      />
-      <NodeEditor
-        ref={ref}
-        portTypes={flumeConfig.portTypes}
-        nodeTypes={flumeConfig.nodeTypes}
-        nodes={nodes}
-        comments={comments}
-        onChange={setNodes}
-        onCommentsChange={setComments}
-        initialPan={{ x: 300, y: -30 }}
-        initialScale={0.8}
-        // disableZoom
-        onStageChange={stageState => {
-          // console.log(stageState);
-        }}
-        appendages={
-          showHats
-            ? {
-                x_Zt2TbpCG: (
-                  <div
-                    style={{
-                      color: "white",
-                      padding: 10,
-                      backgroundColor: "green",
-                      width: "100%",
-                      textAlign: "center"
+          ]}
+          renderNodeHeader={(Wrapper, nodeType, actions, meta) => {
+            return (
+              <Wrapper style={{ display: "flex" }}>
+                <div>
+                  <p>{nodeType.label}</p>
+                  <button
+                    onClick={() => {
+                      console.log(ref.current.getEditorViewSettings());
                     }}
                   >
-                    testing
-                  </div>
-                )
-              }
-            : undefined
-        }
-        defaultNodes={[
-          {
-            type: "websiteAttributes",
-            x: 400,
-            y: -200
-          }
-        ]}
-        renderNodeHeader={(Wrapper, nodeType, actions, meta) => {
-          return (
-            <Wrapper style={{ display: "flex" }}>
-              <div>
-                <p>{nodeType.label}</p>
-                <button
-                  onClick={() => {
-                    console.log(ref.current.getEditorViewSettings());
-                  }}
-                >
-                  {meta.nodeId}
-                </button>
-              </div>
-              {nodeType.type === "employee" ? (
-                <button
-                  style={{
-                    margin: -4,
-                    marginLeft: "auto",
-                    marginRight: 2,
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    fontSize: 14,
-                    color: "#222"
-                  }}
-                  onClick={actions.openMenu}
-                >
-                  ☰
-                </button>
-              ) : null}
-            </Wrapper>
-          );
-        }}
-        debug
-      />
-      <div style={{ marginTop: 30 }}>
-        <Website nodes={nodes} />
+                    {meta.nodeId}
+                  </button>
+                </div>
+                {nodeType.type === "employee" ? (
+                  <button
+                    style={{
+                      margin: -4,
+                      marginLeft: "auto",
+                      marginRight: 2,
+                      background: "none",
+                      border: "none",
+                      padding: 0,
+                      fontSize: 14,
+                      color: "#222"
+                    }}
+                    onClick={actions.openMenu}
+                  >
+                    ☰
+                  </button>
+                ) : null}
+              </Wrapper>
+            );
+          }}
+          debug
+        />
+        <div style={{ marginTop: 30 }}>
+          <Website nodes={nodes} />
+        </div>
       </div>
-    </div>
+    </MantineProvider>
   );
 };
 

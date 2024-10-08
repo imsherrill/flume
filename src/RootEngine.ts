@@ -126,6 +126,7 @@ export class RootEngine {
       nodes,
       context
     );
+
     const outputResult = this.fireNodeFunction(
       outputNode,
       inputValues,

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import { NumberInput, Textarea } from '@mantine/core';
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -286,9 +287,9 @@ function styleInject(css, ref) {
   }
 }
 
-var css$d = ".Stage_wrapper__1X5K_ {\n  width: 100%;\n  height: 100%;\n  min-height: 100px;\n  background-color: rgb(26, 28, 29);\n  background-image: linear-gradient(\n      0deg,\n      transparent 24%,\n      rgba(255, 255, 255, 0.04) 25%,\n      rgba(255, 255, 255, 0.04) 26%,\n      transparent 27%,\n      transparent 74%,\n      rgba(255, 255, 255, 0.04) 75%,\n      rgba(255, 255, 255, 0.04) 76%,\n      transparent 77%,\n      transparent\n    ),\n    linear-gradient(\n      90deg,\n      transparent 24%,\n      rgba(255, 255, 255, 0.04) 25%,\n      rgba(255, 255, 255, 0.04) 26%,\n      transparent 27%,\n      transparent 74%,\n      rgba(255, 255, 255, 0.04) 75%,\n      rgba(255, 255, 255, 0.04) 76%,\n      transparent 77%,\n      transparent\n    );\n  color: #000;\n  background-size: 30px 30px;\n  position: relative;\n  overflow: hidden;\n  -webkit-overflow-scrolling: touch;\n  font-family: Helvetica, sans-serif;\n  text-align: left;\n  line-height: 1;\n  outline: none !important;\n}\n.Stage_wrapper__1X5K_ * {\n  box-sizing: border-box;\n}\n.Stage_wrapper__1X5K_ input,\ntextarea,\nselect {\n  font-family: Helvetica, sans-serif;\n}\n.Stage_transformWrapper__3CfIp {\n  transform-origin: center center;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  width: 0px;\n  height: 0px;\n}\n.Stage_scaleWrapper__2Y7Ck {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 0px;\n  height: 0px;\n}\n";
-var styles$d = {"wrapper":"Stage_wrapper__1X5K_","transformWrapper":"Stage_transformWrapper__3CfIp","scaleWrapper":"Stage_scaleWrapper__2Y7Ck"};
-styleInject(css$d);
+var css$c = ".Stage_wrapper__1X5K_ {\n  width: 100%;\n  height: 100%;\n  min-height: 100px;\n  background-color: rgb(26, 28, 29);\n  background-image: linear-gradient(\n      0deg,\n      transparent 24%,\n      rgba(255, 255, 255, 0.04) 25%,\n      rgba(255, 255, 255, 0.04) 26%,\n      transparent 27%,\n      transparent 74%,\n      rgba(255, 255, 255, 0.04) 75%,\n      rgba(255, 255, 255, 0.04) 76%,\n      transparent 77%,\n      transparent\n    ),\n    linear-gradient(\n      90deg,\n      transparent 24%,\n      rgba(255, 255, 255, 0.04) 25%,\n      rgba(255, 255, 255, 0.04) 26%,\n      transparent 27%,\n      transparent 74%,\n      rgba(255, 255, 255, 0.04) 75%,\n      rgba(255, 255, 255, 0.04) 76%,\n      transparent 77%,\n      transparent\n    );\n  color: #000;\n  background-size: 30px 30px;\n  position: relative;\n  overflow: hidden;\n  -webkit-overflow-scrolling: touch;\n  font-family: Helvetica, sans-serif;\n  text-align: left;\n  line-height: 1;\n  outline: none !important;\n}\n.Stage_wrapper__1X5K_ * {\n  box-sizing: border-box;\n}\n.Stage_wrapper__1X5K_ input,\ntextarea,\nselect {\n  font-family: Helvetica, sans-serif;\n}\n.Stage_transformWrapper__3CfIp {\n  transform-origin: center center;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  width: 0px;\n  height: 0px;\n}\n.Stage_scaleWrapper__2Y7Ck {\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 0px;\n  height: 0px;\n}\n";
+var styles$c = {"wrapper":"Stage_wrapper__1X5K_","transformWrapper":"Stage_transformWrapper__3CfIp","scaleWrapper":"Stage_scaleWrapper__2Y7Ck"};
+styleInject(css$c);
 
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
@@ -422,9 +423,9 @@ if (ReactDOM.createPortal) {
 
 var Portal$1 = Portal;
 
-var css$c = ".ContextMenu_menuWrapper__1BheJ{\n  position: fixed;\n  z-index: 9999;\n  background: rgba(29, 32, 34, 0.95);\n  border-radius: 5px;\n  box-shadow: 0px 6px 7px rgba(0,0,0,.3);\n  border: 1px solid rgba(0,0,0,.4);\n  font-size: 14px;\n  max-width: 300px;\n  min-width: 150px;\n  font-family: Helvetica, sans-serif;\n  line-height: 1.15;\n  outline: none;\n}\n@supports (backdrop-filter: blur(6px)){\n  .ContextMenu_menuWrapper__1BheJ{\n    backdrop-filter: blur(6px);\n    background: rgba(29, 32, 34, 0.8);\n  }\n}\n.ContextMenu_menuHeader__1Cw58{\n  padding: 5px;\n  border-bottom: 1px solid rgba(255,255,255,.1);\n  display: flex;\n  flex-direction: column;\n}\n.ContextMenu_menuLabel__158Pv{\n  margin: 0px;\n  color: #fff;\n  font-size: 16px;\n  font-weight: 600;\n}\n.ContextMenu_optionsWrapper__2YK_z{\n  max-height: 300px;\n  overflow-y: auto;\n  display: flex;\n  flex-direction: column;\n}\n.ContextMenu_menuFilter__1goBp{\n  border: none;\n  background: none;\n  height: 24px;\n  flex: 1 1 auto;\n  width: 100%;\n  outline: none;\n  color: #fff;\n}\n.ContextMenu_menuFilter__1goBp::placeholder{\n    font-style: italic;\n  }\n.ContextMenu_option__33MDL{\n  display: flex;\n  flex-direction: column;\n  flex-shrink: 0;\n  padding: 5px;\n  border-bottom: 1px solid rgba(255,255,255,.1);\n  color: #ffffff;\n}\n.ContextMenu_option__33MDL:last-child{\n    border-bottom: none;\n  }\n.ContextMenu_option__33MDL:hover{\n    background: rgba(255,255,255,.05);\n  }\n.ContextMenu_option__33MDL label{\n    margin-bottom: 5px;\n    user-select: none;\n  }\n.ContextMenu_option__33MDL label:last-child{\n      margin-bottom: 0px;\n    }\n.ContextMenu_option__33MDL p{\n    margin: 0px;\n    font-style: italic;\n    font-size: 12px;\n    color: rgb(182, 186, 194);\n    user-select: none;\n  }\n.ContextMenu_option__33MDL[data-selected=true]{\n    background: rgba(255,255,255,.05);\n  }\n.ContextMenu_emptyText__2rcXy{\n  color: #fff;\n  padding: 5px;\n}\n";
-var styles$c = {"menuWrapper":"ContextMenu_menuWrapper__1BheJ","menuHeader":"ContextMenu_menuHeader__1Cw58","menuLabel":"ContextMenu_menuLabel__158Pv","optionsWrapper":"ContextMenu_optionsWrapper__2YK_z","menuFilter":"ContextMenu_menuFilter__1goBp","option":"ContextMenu_option__33MDL","emptyText":"ContextMenu_emptyText__2rcXy"};
-styleInject(css$c);
+var css$b = ".ContextMenu_menuWrapper__1BheJ{\n  position: fixed;\n  z-index: 9999;\n  background: rgba(29, 32, 34, 0.95);\n  border-radius: 5px;\n  box-shadow: 0px 6px 7px rgba(0,0,0,.3);\n  border: 1px solid rgba(0,0,0,.4);\n  font-size: 14px;\n  max-width: 300px;\n  min-width: 150px;\n  font-family: Helvetica, sans-serif;\n  line-height: 1.15;\n  outline: none;\n}\n@supports (backdrop-filter: blur(6px)){\n  .ContextMenu_menuWrapper__1BheJ{\n    backdrop-filter: blur(6px);\n    background: rgba(29, 32, 34, 0.8);\n  }\n}\n.ContextMenu_menuHeader__1Cw58{\n  padding: 5px;\n  border-bottom: 1px solid rgba(255,255,255,.1);\n  display: flex;\n  flex-direction: column;\n}\n.ContextMenu_menuLabel__158Pv{\n  margin: 0px;\n  color: #fff;\n  font-size: 16px;\n  font-weight: 600;\n}\n.ContextMenu_optionsWrapper__2YK_z{\n  max-height: 300px;\n  overflow-y: auto;\n  display: flex;\n  flex-direction: column;\n}\n.ContextMenu_menuFilter__1goBp{\n  border: none;\n  background: none;\n  height: 24px;\n  flex: 1 1 auto;\n  width: 100%;\n  outline: none;\n  color: #fff;\n}\n.ContextMenu_menuFilter__1goBp::placeholder{\n    font-style: italic;\n  }\n.ContextMenu_option__33MDL{\n  display: flex;\n  flex-direction: column;\n  flex-shrink: 0;\n  padding: 5px;\n  border-bottom: 1px solid rgba(255,255,255,.1);\n  color: #ffffff;\n}\n.ContextMenu_option__33MDL:last-child{\n    border-bottom: none;\n  }\n.ContextMenu_option__33MDL:hover{\n    background: rgba(255,255,255,.05);\n  }\n.ContextMenu_option__33MDL label{\n    margin-bottom: 5px;\n    user-select: none;\n  }\n.ContextMenu_option__33MDL label:last-child{\n      margin-bottom: 0px;\n    }\n.ContextMenu_option__33MDL p{\n    margin: 0px;\n    font-style: italic;\n    font-size: 12px;\n    color: rgb(182, 186, 194);\n    user-select: none;\n  }\n.ContextMenu_option__33MDL[data-selected=true]{\n    background: rgba(255,255,255,.05);\n  }\n.ContextMenu_emptyText__2rcXy{\n  color: #fff;\n  padding: 5px;\n}\n";
+var styles$b = {"menuWrapper":"ContextMenu_menuWrapper__1BheJ","menuHeader":"ContextMenu_menuHeader__1Cw58","menuLabel":"ContextMenu_menuLabel__158Pv","optionsWrapper":"ContextMenu_optionsWrapper__2YK_z","menuFilter":"ContextMenu_menuFilter__1goBp","option":"ContextMenu_option__33MDL","emptyText":"ContextMenu_emptyText__2rcXy"};
+styleInject(css$b);
 
 /**
  * The base implementation of `_.clamp` which doesn't coerce arguments.
@@ -987,7 +988,7 @@ var ContextMenu = function ContextMenu(_ref) {
   }, [selectedIndex]);
   return /*#__PURE__*/React.createElement("div", {
     "data-flume-component": "ctx-menu",
-    className: styles$c.menuWrapper,
+    className: styles$b.menuWrapper,
     onMouseDown: function onMouseDown(e) {
       return e.stopPropagation();
     },
@@ -1002,10 +1003,10 @@ var ContextMenu = function ContextMenu(_ref) {
     role: "menu",
     "aria-activedescendant": "".concat(menuId.current, "-").concat(selectedIndex)
   }, !hideHeader && (label ? true : !!options.length) ? /*#__PURE__*/React.createElement("div", {
-    className: styles$c.menuHeader,
+    className: styles$b.menuHeader,
     "data-flume-component": "ctx-menu-header"
   }, /*#__PURE__*/React.createElement("label", {
-    className: styles$c.menuLabel,
+    className: styles$b.menuLabel,
     "data-flume-component": "ctx-menu-title"
   }, label), !hideFilter && options.length ? /*#__PURE__*/React.createElement("input", {
     "data-flume-component": "ctx-menu-input",
@@ -1013,12 +1014,12 @@ var ContextMenu = function ContextMenu(_ref) {
     placeholder: "Filter options",
     value: filter,
     onChange: handleFilterChange,
-    className: styles$c.menuFilter,
+    className: styles$b.menuFilter,
     autoFocus: true,
     ref: filterInput
   }) : null) : null, /*#__PURE__*/React.createElement("div", {
     "data-flume-component": "ctx-menu-list",
-    className: styles$c.optionsWrapper,
+    className: styles$b.optionsWrapper,
     role: "menu",
     ref: menuOptionsWrapper,
     style: {
@@ -1039,7 +1040,7 @@ var ContextMenu = function ContextMenu(_ref) {
     }, /*#__PURE__*/React.createElement("label", null, option.label), option.description ? /*#__PURE__*/React.createElement("p", null, option.description) : null);
   }), !options.length ? /*#__PURE__*/React.createElement("span", {
     "data-flume-component": "ctx-menu-empty",
-    className: styles$c.emptyText
+    className: styles$b.emptyText
   }, emptyText) : null));
 };
 
@@ -1052,7 +1053,7 @@ var ContextOption = function ContextOption(_ref2) {
       onMouseEnter = _ref2.onMouseEnter;
   return /*#__PURE__*/React.createElement("div", {
     "data-flume-component": "ctx-menu-option",
-    className: styles$c.option,
+    className: styles$b.option,
     role: "menuitem",
     onClick: onClick,
     onMouseEnter: onMouseEnter,
@@ -1107,9 +1108,9 @@ function _objectWithoutProperties(source, excluded) {
 
 var _excluded$3 = ["children", "stageState", "stageRect", "onDragDelayStart", "onDragStart", "onDrag", "onDragEnd", "onMouseDown", "onTouchStart", "disabled", "delay", "innerRef"];
 
-function ownKeys$d(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function ownKeys$e(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread$d(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$d(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$d(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _objectSpread$e(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$e(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$e(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 var Draggable = function Draggable(_ref) {
   var children = _ref.children,
@@ -1243,7 +1244,7 @@ var Draggable = function Draggable(_ref) {
     document.addEventListener("mousemove", checkDragDelay);
   };
 
-  return /*#__PURE__*/React.createElement("div", _objectSpread$d({
+  return /*#__PURE__*/React.createElement("div", _objectSpread$e({
     onMouseDown: function onMouseDown(e) {
       if (!disabled) {
         startDragDelay(e);
@@ -4600,9 +4601,9 @@ function _toConsumableArray(arr) {
   return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray$1(arr) || _nonIterableSpread();
 }
 
-var css$b = ".Connection_svg__-fKLY{\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  pointer-events: none;\n  z-index: 0;\n  overflow: visible !important;\n}\n";
-var styles$b = {"svg":"Connection_svg__-fKLY"};
-styleInject(css$b);
+var css$a = ".Connection_svg__-fKLY{\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  pointer-events: none;\n  z-index: 0;\n  overflow: visible !important;\n}\n";
+var styles$a = {"svg":"Connection_svg__-fKLY"};
+styleInject(css$a);
 
 var pi = Math.PI,
     tau = 2 * pi,
@@ -4952,7 +4953,7 @@ var createSVG = function createSVG(_ref5) {
       inputNodeId = _ref5.inputNodeId,
       inputPortName = _ref5.inputPortName;
   var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("class", styles$b.svg);
+  svg.setAttribute("class", styles$a.svg);
   var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   var curve = calculateCurve(from, to);
   path.setAttribute("d", curve);
@@ -5069,9 +5070,9 @@ var checkForCircularNodes = function checkForCircularNodes(nodes, startNodeId) {
   return isCircular;
 };
 
-function ownKeys$c(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function ownKeys$d(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread$c(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$c(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$c(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _objectSpread$d(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$d(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$d(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var ToastActionTypes;
 
 (function (ToastActionTypes) {
@@ -5102,7 +5103,7 @@ var toastsReducer = (function () {
         var index = toasts.findIndex(function (t) {
           return t.id === action.id;
         });
-        return [].concat(_toConsumableArray(toasts.slice(0, index)), [_objectSpread$c(_objectSpread$c({}, toasts[index]), {}, {
+        return [].concat(_toConsumableArray(toasts.slice(0, index)), [_objectSpread$d(_objectSpread$d({}, toasts[index]), {}, {
           height: action.height
         })], _toConsumableArray(toasts.slice(index + 1)));
       }
@@ -5113,7 +5114,7 @@ var toastsReducer = (function () {
           return t.id === action.id;
         });
 
-        return [].concat(_toConsumableArray(toasts.slice(0, _index)), [_objectSpread$c(_objectSpread$c({}, toasts[_index]), {}, {
+        return [].concat(_toConsumableArray(toasts.slice(0, _index)), [_objectSpread$d(_objectSpread$d({}, toasts[_index]), {}, {
           exiting: true
         })], _toConsumableArray(toasts.slice(_index + 1)));
       }
@@ -5138,23 +5139,23 @@ function _toPropertyKey$2(arg) { var key = _toPrimitive$2(arg, "string"); return
 
 function _toPrimitive$2(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
-function ownKeys$b(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function ownKeys$c(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread$b(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$b(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$b(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _objectSpread$c(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$c(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$c(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 var addConnection = function addConnection(nodes, input, output, portTypes) {
   var _objectSpread4;
 
-  var newNodes = _objectSpread$b(_objectSpread$b({}, nodes), {}, (_objectSpread4 = {}, _defineProperty(_objectSpread4, input.nodeId, _objectSpread$b(_objectSpread$b({}, nodes[input.nodeId]), {}, {
-    connections: _objectSpread$b(_objectSpread$b({}, nodes[input.nodeId].connections), {}, {
-      inputs: _objectSpread$b(_objectSpread$b({}, nodes[input.nodeId].connections.inputs), {}, _defineProperty({}, input.portName, [].concat(_toConsumableArray(nodes[input.nodeId].connections.inputs[input.portName] || []), [{
+  var newNodes = _objectSpread$c(_objectSpread$c({}, nodes), {}, (_objectSpread4 = {}, _defineProperty(_objectSpread4, input.nodeId, _objectSpread$c(_objectSpread$c({}, nodes[input.nodeId]), {}, {
+    connections: _objectSpread$c(_objectSpread$c({}, nodes[input.nodeId].connections), {}, {
+      inputs: _objectSpread$c(_objectSpread$c({}, nodes[input.nodeId].connections.inputs), {}, _defineProperty({}, input.portName, [].concat(_toConsumableArray(nodes[input.nodeId].connections.inputs[input.portName] || []), [{
         nodeId: output.nodeId,
         portName: output.portName
       }])))
     })
-  })), _defineProperty(_objectSpread4, output.nodeId, _objectSpread$b(_objectSpread$b({}, nodes[output.nodeId]), {}, {
-    connections: _objectSpread$b(_objectSpread$b({}, nodes[output.nodeId].connections), {}, {
-      outputs: _objectSpread$b(_objectSpread$b({}, nodes[output.nodeId].connections.outputs), {}, _defineProperty({}, output.portName, [].concat(_toConsumableArray(nodes[output.nodeId].connections.outputs[output.portName] || []), [{
+  })), _defineProperty(_objectSpread4, output.nodeId, _objectSpread$c(_objectSpread$c({}, nodes[output.nodeId]), {}, {
+    connections: _objectSpread$c(_objectSpread$c({}, nodes[output.nodeId].connections), {}, {
+      outputs: _objectSpread$c(_objectSpread$c({}, nodes[output.nodeId].connections.outputs), {}, _defineProperty({}, output.portName, [].concat(_toConsumableArray(nodes[output.nodeId].connections.outputs[output.portName] || []), [{
         nodeId: input.nodeId,
         portName: input.portName
       }])))
@@ -5174,8 +5175,8 @@ var removeConnection = function removeConnection(nodes, input, output) {
       _inputNode$connection[_input$portName];
       var newInputNodeConnectionsInputs = _objectWithoutProperties(_inputNode$connection, [_input$portName].map(_toPropertyKey$2));
 
-  var newInputNode = _objectSpread$b(_objectSpread$b({}, inputNode), {}, {
-    connections: _objectSpread$b(_objectSpread$b({}, inputNode.connections), {}, {
+  var newInputNode = _objectSpread$c(_objectSpread$c({}, inputNode), {}, {
+    connections: _objectSpread$c(_objectSpread$c({}, inputNode.connections), {}, {
       inputs: newInputNodeConnectionsInputs
     })
   });
@@ -5185,13 +5186,13 @@ var removeConnection = function removeConnection(nodes, input, output) {
     return cnx.nodeId === input.nodeId ? cnx.portName !== input.portName : true;
   });
 
-  var newOutputNode = _objectSpread$b(_objectSpread$b({}, outputNode), {}, {
-    connections: _objectSpread$b(_objectSpread$b({}, outputNode.connections), {}, {
-      outputs: _objectSpread$b(_objectSpread$b({}, outputNode.connections.outputs), {}, _defineProperty({}, output.portName, filteredOutputNodes))
+  var newOutputNode = _objectSpread$c(_objectSpread$c({}, outputNode), {}, {
+    connections: _objectSpread$c(_objectSpread$c({}, outputNode.connections), {}, {
+      outputs: _objectSpread$c(_objectSpread$c({}, outputNode.connections.outputs), {}, _defineProperty({}, output.portName, filteredOutputNodes))
     })
   });
 
-  return _objectSpread$b(_objectSpread$b({}, nodes), {}, (_objectSpread6 = {}, _defineProperty(_objectSpread6, input.nodeId, newInputNode), _defineProperty(_objectSpread6, output.nodeId, newOutputNode), _objectSpread6));
+  return _objectSpread$c(_objectSpread$c({}, nodes), {}, (_objectSpread6 = {}, _defineProperty(_objectSpread6, input.nodeId, newInputNode), _defineProperty(_objectSpread6, output.nodeId, newOutputNode), _objectSpread6));
 };
 
 var getFilteredTransputs = function getFilteredTransputs(transputs, nodeId) {
@@ -5224,7 +5225,7 @@ var removeNode = function removeNode(startNodes, nodeId) {
       var nodes = _objectWithoutProperties(startNodes, [nodeId].map(_toPropertyKey$2));
 
   nodes = Object.values(nodes).reduce(function (obj, node) {
-    obj[node.id] = _objectSpread$b(_objectSpread$b({}, node), {}, {
+    obj[node.id] = _objectSpread$c(_objectSpread$c({}, node), {}, {
       connections: removeConnections(node.connections, nodeId)
     });
     return obj;
@@ -5234,7 +5235,7 @@ var removeNode = function removeNode(startNodes, nodeId) {
 };
 
 var reconcileNodes = function reconcileNodes(initialNodes, nodeTypes, portTypes, context) {
-  var nodes = _objectSpread$b({}, initialNodes); // Delete extraneous nodes
+  var nodes = _objectSpread$c({}, initialNodes); // Delete extraneous nodes
 
 
   var nodesToDelete = Object.values(nodes).map(function (node) {
@@ -5273,16 +5274,16 @@ var reconcileNodes = function reconcileNodes(initialNodes, nodeTypes, portTypes,
       return dataObj;
     }, {});
 
-    var newInputData = _objectSpread$b(_objectSpread$b({}, defaultInputData), currentInputData);
+    var newInputData = _objectSpread$c(_objectSpread$c({}, defaultInputData), currentInputData);
 
-    nodesObj[node.id] = _objectSpread$b(_objectSpread$b({}, node), {}, {
+    nodesObj[node.id] = _objectSpread$c(_objectSpread$c({}, node), {}, {
       inputData: newInputData
     });
     return nodesObj;
   }, {}); // Reconcile node attributes for each node
 
   reconciledNodes = Object.values(reconciledNodes).reduce(function (nodesObj, node) {
-    var newNode = _objectSpread$b({}, node);
+    var newNode = _objectSpread$c({}, node);
 
     var nodeType = nodeTypes[node.type];
 
@@ -5307,7 +5308,7 @@ var getInitialNodes = function getInitialNodes() {
   var portTypes = arguments.length > 3 ? arguments[3] : undefined;
   var context = arguments.length > 4 ? arguments[4] : undefined;
   var reconciledNodes = reconcileNodes(initialNodes, nodeTypes, portTypes, context);
-  return _objectSpread$b(_objectSpread$b({}, reconciledNodes), defaultNodes.reduce(function (nodes, dNode, i) {
+  return _objectSpread$c(_objectSpread$c({}, reconciledNodes), defaultNodes.reduce(function (nodes, dNode, i) {
     var nodeNotAdded = !Object.values(initialNodes).find(function (n) {
       return n.type === dNode.type;
     });
@@ -5484,7 +5485,7 @@ var nodesReducer = function nodesReducer(nodes, action, _ref6, dispatchToasts) {
           newNode.root = true;
         }
 
-        return _objectSpread$b(_objectSpread$b({}, nodes), {}, _defineProperty({}, newNodeId, newNode));
+        return _objectSpread$c(_objectSpread$c({}, nodes), {}, _defineProperty({}, newNodeId, newNode));
       }
 
     case NodesActionType.REMOVE_NODE:
@@ -5495,7 +5496,7 @@ var nodesReducer = function nodesReducer(nodes, action, _ref6, dispatchToasts) {
 
     case NodesActionType.HYDRATE_DEFAULT_NODES:
       {
-        var _newNodes = _objectSpread$b({}, nodes);
+        var _newNodes = _objectSpread$c({}, nodes);
 
         for (var key in _newNodes) {
           if (_newNodes[key].defaultNode) {
@@ -5506,7 +5507,7 @@ var nodesReducer = function nodesReducer(nodes, action, _ref6, dispatchToasts) {
                 _newNodes$key.defaultNode;
                 var node = _objectWithoutProperties(_newNodes$key, _excluded$2);
 
-            _newNodes[_newNodeId] = _objectSpread$b(_objectSpread$b({}, node), {}, {
+            _newNodes[_newNodeId] = _objectSpread$c(_objectSpread$c({}, node), {}, {
               id: _newNodeId
             });
             delete _newNodes[key];
@@ -5524,13 +5525,13 @@ var nodesReducer = function nodesReducer(nodes, action, _ref6, dispatchToasts) {
             data = action.data,
             setValue = action.setValue;
 
-        var newData = _objectSpread$b(_objectSpread$b({}, nodes[_nodeId].inputData), {}, _defineProperty({}, portName, _objectSpread$b(_objectSpread$b({}, nodes[_nodeId].inputData[portName]), {}, _defineProperty({}, controlName, data))));
+        var newData = _objectSpread$c(_objectSpread$c({}, nodes[_nodeId].inputData), {}, _defineProperty({}, portName, _objectSpread$c(_objectSpread$c({}, nodes[_nodeId].inputData[portName]), {}, _defineProperty({}, controlName, data))));
 
         if (setValue) {
           newData = setValue(newData, nodes[_nodeId].inputData);
         }
 
-        return _objectSpread$b(_objectSpread$b({}, nodes), {}, _defineProperty({}, _nodeId, _objectSpread$b(_objectSpread$b({}, nodes[_nodeId]), {}, {
+        return _objectSpread$c(_objectSpread$c({}, nodes), {}, _defineProperty({}, _nodeId, _objectSpread$c(_objectSpread$c({}, nodes[_nodeId]), {}, {
           inputData: newData
         })));
       }
@@ -5540,7 +5541,7 @@ var nodesReducer = function nodesReducer(nodes, action, _ref6, dispatchToasts) {
         var _x = action.x,
             _y = action.y,
             _nodeId2 = action.nodeId;
-        return _objectSpread$b(_objectSpread$b({}, nodes), {}, _defineProperty({}, _nodeId2, _objectSpread$b(_objectSpread$b({}, nodes[_nodeId2]), {}, {
+        return _objectSpread$c(_objectSpread$c({}, nodes), {}, _defineProperty({}, _nodeId2, _objectSpread$c(_objectSpread$c({}, nodes[_nodeId2]), {}, {
           x: _x,
           y: _y
         })));
@@ -5568,9 +5569,9 @@ function _toPropertyKey$1(arg) { var key = _toPrimitive$1(arg, "string"); return
 
 function _toPrimitive$1(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
-function ownKeys$a(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function ownKeys$b(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread$a(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$a(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$a(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _objectSpread$b(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$b(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$b(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var CommentActionTypes;
 
 (function (CommentActionTypes) {
@@ -5584,7 +5585,7 @@ var CommentActionTypes;
 })(CommentActionTypes || (CommentActionTypes = {}));
 
 var setComment = function setComment(comments, id, merge) {
-  return _objectSpread$a(_objectSpread$a({}, comments), {}, _defineProperty({}, id, _objectSpread$a(_objectSpread$a({}, comments[id]), merge)));
+  return _objectSpread$b(_objectSpread$b({}, comments), {}, _defineProperty({}, id, _objectSpread$b(_objectSpread$b({}, comments[id]), merge)));
 };
 
 var commentsReducer = function commentsReducer() {
@@ -5604,7 +5605,7 @@ var commentsReducer = function commentsReducer() {
           color: "blue",
           isNew: true
         };
-        return _objectSpread$a(_objectSpread$a({}, comments), {}, _defineProperty({}, _comment.id, _comment));
+        return _objectSpread$b(_objectSpread$b({}, comments), {}, _defineProperty({}, _comment.id, _comment));
       }
 
     case CommentActionTypes.REMOVE_COMMENT_NEW:
@@ -5612,7 +5613,7 @@ var commentsReducer = function commentsReducer() {
           _comments$action$id.isNew;
           var comment = _objectWithoutProperties(_comments$action$id, _excluded$1);
 
-      return _objectSpread$a(_objectSpread$a({}, comments), {}, _defineProperty({}, action.id, comment));
+      return _objectSpread$b(_objectSpread$b({}, comments), {}, _defineProperty({}, action.id, comment));
 
     case CommentActionTypes.SET_COMMENT_COORDINATES:
       {
@@ -5658,9 +5659,9 @@ var commentsReducer = function commentsReducer() {
   }
 };
 
-function ownKeys$9(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function ownKeys$a(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread$9(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$9(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$9(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _objectSpread$a(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$a(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$a(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 var StageActionType;
 
@@ -5675,17 +5676,17 @@ var stageReducer = (function (state, incomingAction) {
 
   switch (action.type) {
     case StageActionType.SET_SCALE:
-      return _objectSpread$9(_objectSpread$9({}, state), {}, {
+      return _objectSpread$a(_objectSpread$a({}, state), {}, {
         scale: action.scale
       });
 
     case StageActionType.SET_TRANSLATE:
-      return _objectSpread$9(_objectSpread$9({}, state), {}, {
+      return _objectSpread$a(_objectSpread$a({}, state), {}, {
         translate: action.translate
       });
 
     case StageActionType.SET_TRANSLATE_SCALE:
-      return _objectSpread$9(_objectSpread$9({}, state), {}, {
+      return _objectSpread$a(_objectSpread$a({}, state), {}, {
         translate: action.translate,
         scale: action.scale
       });
@@ -5957,7 +5958,7 @@ var Stage = function Stage(_ref) {
   return /*#__PURE__*/React.createElement(Draggable, {
     "data-flume-component": "stage",
     id: "".concat(STAGE_ID).concat(editorId),
-    className: styles$d.wrapper,
+    className: styles$c.wrapper,
     innerRef: wrapper,
     onContextMenu: handleContextMenu,
     onMouseEnter: handleMouseEnter,
@@ -5985,33 +5986,33 @@ var Stage = function Stage(_ref) {
     label: "Add Node"
   })) : null, /*#__PURE__*/React.createElement("div", {
     ref: translateWrapper,
-    className: styles$d.transformWrapper,
+    className: styles$c.transformWrapper,
     style: {
       transform: "translate(".concat(-translate.x, "px, ").concat(-translate.y, "px)")
     }
   }, /*#__PURE__*/React.createElement("div", {
-    className: styles$d.scaleWrapper,
+    className: styles$c.scaleWrapper,
     style: {
       transform: "scale(".concat(scale, ")")
     }
   }, children)), outerStageChildren);
 };
 
-var css$a = ".Node_wrapper__3SmT7 {\n  background: rgba(114, 120, 124, 0.9);\n  border-radius: 5px;\n  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  user-select: none;\n  display: flex;\n  flex-direction: column;\n  z-index: 1;\n  cursor: default;\n}\n.Node_label__3MmhF {\n  font-size: 13px;\n  text-transform: uppercase;\n  padding: 5px;\n  background: #53585a;\n  border-radius: 5px 5px 0px 0px;\n  margin: 0px;\n  margin-bottom: 3px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.15);\n}\n";
-var styles$a = {"wrapper":"Node_wrapper__3SmT7","label":"Node_label__3MmhF"};
-styleInject(css$a);
-
-var css$9 = ".IoPorts_wrapper__3d2hh{\n  display: flex;\n  flex-direction: column;\n  margin-top: auto;\n  width: 100%;\n  padding: 5px;\n}\n.IoPorts_inputs__2etkb{\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.IoPorts_inputs__2etkb:last-child{\n    margin-bottom: 0px;\n  }\n.IoPorts_inputs__2etkb .IoPorts_transput__1wbHA:first-child .IoPorts_portLabel__qOE7y, .IoPorts_inputs__2etkb .IoPorts_transput__1wbHA:first-child .IoPorts_port__1_a6J{\n        margin-top: 5px;\n      }\n.IoPorts_inputs__2etkb .IoPorts_transput__1wbHA:last-child .IoPorts_portLabel__qOE7y, .IoPorts_inputs__2etkb .IoPorts_transput__1wbHA:last-child .IoPorts_port__1_a6J{\n        margin-bottom: 5px;\n      }\n.IoPorts_outputs__3JGh-{\n  display: flex;\n  flex-direction: column;\n  margin-left: auto;\n  justify-content: flex-end;\n  align-items: flex-end;\n  width: 100%;\n}\n.IoPorts_outputs__3JGh- .IoPorts_transput__1wbHA:last-child .IoPorts_portLabel__qOE7y, .IoPorts_outputs__3JGh- .IoPorts_transput__1wbHA:last-child .IoPorts_port__1_a6J{\n        margin-bottom: 5px;\n      }\n.IoPorts_outputs__3JGh-:first-child{\n    margin-top: 5px;\n  }\n.IoPorts_transput__1wbHA{\n  display: flex;\n  align-items: center;\n  margin-top: 6px;\n  margin-bottom: 6px;\n}\n.IoPorts_transput__1wbHA:first-child{\n    margin-top: 0px;\n  }\n.IoPorts_transput__1wbHA[data-controlless=\"true\"]{\n    margin-top: 6px;\n    margin-bottom: 6px;\n  }\n.IoPorts_transput__1wbHA[data-controlless=\"true\"]:first-child{\n      margin-top: 0px;\n    }\n.IoPorts_transput__1wbHA[data-controlless=\"false\"]{\n    margin-top: 2px;\n    margin-bottom: 2px;\n  }\n.IoPorts_controls__1dKFt{\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.IoPorts_portLabel__qOE7y{\n  font-size: 13px;\n  font-weight: 400;\n}\n.IoPorts_port__1_a6J{\n  width: 12px;\n  height: 12px;\n  background: linear-gradient(to bottom, #acb1b4, #919699);\n  border-radius: 100%;\n  margin-right: 5px;\n  margin-left: -11px;\n  flex: 0 0 auto;\n  box-shadow: 0px 2px 1px 0px rgba(0,0,0,.6);\n}\n.IoPorts_port__1_a6J:last-child{\n    margin-right: -11px;\n    margin-left: 5px;\n  }\n.IoPorts_port__1_a6J[data-port-color=\"red\"]{\n    background: linear-gradient(to bottom, #fa4a6f, #c22e4d);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"purple\"]{\n    background: linear-gradient(to bottom, #9e55fb, #6024b6);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"blue\"]{\n    background: linear-gradient(to bottom, #4284f7, #2867d4);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"green\"]{\n    background: linear-gradient(to bottom, #31dd9f, #11ad7a);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"yellow\"]{\n    background: linear-gradient(to bottom, #d6bf47, #9d8923);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"orange\"]{\n    background: linear-gradient(to bottom, #fa7841, #c94b23);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"pink\"]{\n    background: linear-gradient(to bottom, #fe8aeb, #e046c3);\n  }\n";
-var styles$9 = {"wrapper":"IoPorts_wrapper__3d2hh","inputs":"IoPorts_inputs__2etkb","transput":"IoPorts_transput__1wbHA","portLabel":"IoPorts_portLabel__qOE7y","port":"IoPorts_port__1_a6J","outputs":"IoPorts_outputs__3JGh-","controls":"IoPorts_controls__1dKFt"};
+var css$9 = ".Node_wrapper__3SmT7 {\n  background: rgba(114, 120, 124, 0.9);\n  border-radius: 5px;\n  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  user-select: none;\n  display: flex;\n  flex-direction: column;\n  z-index: 1;\n  cursor: default;\n}\n.Node_label__3MmhF {\n  font-size: 13px;\n  text-transform: uppercase;\n  padding: 5px;\n  background: #53585a;\n  border-radius: 5px 5px 0px 0px;\n  margin: 0px;\n  margin-bottom: 3px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.15);\n}\n";
+var styles$9 = {"wrapper":"Node_wrapper__3SmT7","label":"Node_label__3MmhF"};
 styleInject(css$9);
 
-var css$8 = ".Control_wrapper__VZIiC {\n  width: 100%;\n  padding-right: 3px;\n  padding-top: 3px;\n  padding-bottom: 5px;\n}\n.Control_label__1OX-Q {\n  font-size: 14px;\n}\n.Control_controlLabel__3ga2- {\n  font-size: 13px;\n  display: inline-block;\n  margin-left: 2px;\n}\n";
-var styles$8 = {"wrapper":"Control_wrapper__VZIiC","label":"Control_label__1OX-Q","controlLabel":"Control_controlLabel__3ga2-"};
+var css$8 = ".IoPorts_wrapper__3d2hh{\n  display: flex;\n  flex-direction: column;\n  margin-top: auto;\n  width: 100%;\n  padding: 5px;\n}\n.IoPorts_inputs__2etkb{\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 100%;\n  margin-bottom: 10px;\n}\n.IoPorts_inputs__2etkb:last-child{\n    margin-bottom: 0px;\n  }\n.IoPorts_inputs__2etkb .IoPorts_transput__1wbHA:first-child .IoPorts_portLabel__qOE7y, .IoPorts_inputs__2etkb .IoPorts_transput__1wbHA:first-child .IoPorts_port__1_a6J{\n        margin-top: 5px;\n      }\n.IoPorts_inputs__2etkb .IoPorts_transput__1wbHA:last-child .IoPorts_portLabel__qOE7y, .IoPorts_inputs__2etkb .IoPorts_transput__1wbHA:last-child .IoPorts_port__1_a6J{\n        margin-bottom: 5px;\n      }\n.IoPorts_outputs__3JGh-{\n  display: flex;\n  flex-direction: column;\n  margin-left: auto;\n  justify-content: flex-end;\n  align-items: flex-end;\n  width: 100%;\n}\n.IoPorts_outputs__3JGh- .IoPorts_transput__1wbHA:last-child .IoPorts_portLabel__qOE7y, .IoPorts_outputs__3JGh- .IoPorts_transput__1wbHA:last-child .IoPorts_port__1_a6J{\n        margin-bottom: 5px;\n      }\n.IoPorts_outputs__3JGh-:first-child{\n    margin-top: 5px;\n  }\n.IoPorts_transput__1wbHA{\n  display: flex;\n  align-items: center;\n  margin-top: 6px;\n  margin-bottom: 6px;\n}\n.IoPorts_transput__1wbHA:first-child{\n    margin-top: 0px;\n  }\n.IoPorts_transput__1wbHA[data-controlless=\"true\"]{\n    margin-top: 6px;\n    margin-bottom: 6px;\n  }\n.IoPorts_transput__1wbHA[data-controlless=\"true\"]:first-child{\n      margin-top: 0px;\n    }\n.IoPorts_transput__1wbHA[data-controlless=\"false\"]{\n    margin-top: 2px;\n    margin-bottom: 2px;\n  }\n.IoPorts_controls__1dKFt{\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.IoPorts_portLabel__qOE7y{\n  font-size: 13px;\n  font-weight: 400;\n}\n.IoPorts_port__1_a6J{\n  width: 12px;\n  height: 12px;\n  background: linear-gradient(to bottom, #acb1b4, #919699);\n  border-radius: 100%;\n  margin-right: 5px;\n  margin-left: -11px;\n  flex: 0 0 auto;\n  box-shadow: 0px 2px 1px 0px rgba(0,0,0,.6);\n}\n.IoPorts_port__1_a6J:last-child{\n    margin-right: -11px;\n    margin-left: 5px;\n  }\n.IoPorts_port__1_a6J[data-port-color=\"red\"]{\n    background: linear-gradient(to bottom, #fa4a6f, #c22e4d);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"purple\"]{\n    background: linear-gradient(to bottom, #9e55fb, #6024b6);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"blue\"]{\n    background: linear-gradient(to bottom, #4284f7, #2867d4);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"green\"]{\n    background: linear-gradient(to bottom, #31dd9f, #11ad7a);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"yellow\"]{\n    background: linear-gradient(to bottom, #d6bf47, #9d8923);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"orange\"]{\n    background: linear-gradient(to bottom, #fa7841, #c94b23);\n  }\n.IoPorts_port__1_a6J[data-port-color=\"pink\"]{\n    background: linear-gradient(to bottom, #fe8aeb, #e046c3);\n  }\n";
+var styles$8 = {"wrapper":"IoPorts_wrapper__3d2hh","inputs":"IoPorts_inputs__2etkb","transput":"IoPorts_transput__1wbHA","portLabel":"IoPorts_portLabel__qOE7y","port":"IoPorts_port__1_a6J","outputs":"IoPorts_outputs__3JGh-","controls":"IoPorts_controls__1dKFt"};
 styleInject(css$8);
 
-var css$7 = ".Checkbox_wrapper__aSqyY{\n  display: flex;\n  align-items: center;\n}\n.Checkbox_checkbox__Qv5gn{\n  background: linear-gradient(to bottom, #5b5f62, #6f7477);\n  border: 1px solid #3c3e40;\n  border-radius: 4px;\n  margin-right: 8px;\n}\n.Checkbox_label__2RxP-{\n  padding-top: 2px;\n  font-size: 13px;\n}\n";
-var styles$7 = {"wrapper":"Checkbox_wrapper__aSqyY","checkbox":"Checkbox_checkbox__Qv5gn","label":"Checkbox_label__2RxP-"};
+var css$7 = ".Control_wrapper__VZIiC {\n  width: 100%;\n  padding-right: 3px;\n  padding-top: 3px;\n  padding-bottom: 5px;\n}\n.Control_label__1OX-Q {\n  font-size: 14px;\n}\n.Control_controlLabel__3ga2- {\n  font-size: 13px;\n  display: inline-block;\n  margin-left: 2px;\n}\n";
+var styles$7 = {"wrapper":"Control_wrapper__VZIiC","label":"Control_label__1OX-Q","controlLabel":"Control_controlLabel__3ga2-"};
 styleInject(css$7);
+
+var css$6 = ".Checkbox_wrapper__aSqyY{\n  display: flex;\n  align-items: center;\n}\n.Checkbox_checkbox__Qv5gn{\n  background: linear-gradient(to bottom, #5b5f62, #6f7477);\n  border: 1px solid #3c3e40;\n  border-radius: 4px;\n  margin-right: 8px;\n}\n.Checkbox_label__2RxP-{\n  padding-top: 2px;\n  font-size: 13px;\n}\n";
+var styles$6 = {"wrapper":"Checkbox_wrapper__aSqyY","checkbox":"Checkbox_checkbox__Qv5gn","label":"Checkbox_label__2RxP-"};
+styleInject(css$6);
 
 var Checkbox = function Checkbox(_ref) {
   var label = _ref.label,
@@ -6019,10 +6020,10 @@ var Checkbox = function Checkbox(_ref) {
       _onChange = _ref.onChange;
   var id = React.useRef(nanoid(10));
   return /*#__PURE__*/React.createElement("div", {
-    className: styles$7.wrapper
+    className: styles$6.wrapper
   }, /*#__PURE__*/React.createElement("input", {
     "data-flume-component": "checkbox",
-    className: styles$7.checkbox,
+    className: styles$6.checkbox,
     type: "checkbox",
     id: id.current,
     checked: data,
@@ -6031,34 +6032,22 @@ var Checkbox = function Checkbox(_ref) {
     }
   }), /*#__PURE__*/React.createElement("label", {
     "data-flume-component": "checkbox-label",
-    className: styles$7.label,
+    className: styles$6.label,
     htmlFor: id.current
   }, label));
 };
 
-var css$6 = ".TextInput_wrapper__tefOZ {\n  background: none;\n  border: none;\n}\n.TextInput_input__1QHwS {\n  background: linear-gradient(to bottom, #6c7073, #838a8e);\n  width: 100%;\n  border: 1px solid #3c3e40;\n  border-radius: 4px;\n  font-size: 13px;\n  padding: 5px;\n  resize: vertical;\n  outline: none;\n}\n.TextInput_input__1QHwS::placeholder {\n    color: rgb(47, 49, 50);\n  }\n.TextInput_input__1QHwS:focus {\n    background: linear-gradient(to bottom, #7c8286, #99a0a4);\n  }\n";
-var styles$6 = {"wrapper":"TextInput_wrapper__tefOZ","input":"TextInput_input__1QHwS"};
-styleInject(css$6);
+function ownKeys$9(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-var TextInput = function TextInput(_ref) {
+function _objectSpread$9(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys$9(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys$9(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function TextInput(_ref) {
   var placeholder = _ref.placeholder,
       updateNodeConnections = _ref.updateNodeConnections,
       _onChange = _ref.onChange,
       data = _ref.data,
       step = _ref.step,
       type = _ref.type;
-  var numberInput = React.useRef(null);
   var recalculateStageRect = React.useContext(RecalculateStageRectContext);
-
-  var handleDragEnd = function handleDragEnd() {
-    document.removeEventListener("mousemove", handleMouseMove);
-    document.removeEventListener("mouseup", handleDragEnd);
-  };
-
-  var handleMouseMove = function handleMouseMove(e) {
-    e.stopPropagation();
-    updateNodeConnections();
-  };
 
   var handlePossibleResize = function handlePossibleResize(e) {
     e.stopPropagation();
@@ -6067,67 +6056,51 @@ var TextInput = function TextInput(_ref) {
     document.addEventListener("mouseup", handleDragEnd);
   };
 
-  return /*#__PURE__*/React.createElement("div", {
-    className: styles$6.wrapper,
-    "data-flume-component": "text-input"
-  }, type === "number" ? /*#__PURE__*/React.createElement("input", {
-    "data-flume-component": "text-input-number",
-    onKeyDown: function onKeyDown(e) {
-      if (e.keyCode === 69) {
-        e.preventDefault();
-        return false;
-      }
-    },
-    onChange: function onChange(e) {
-      var inputValue = e.target.value.replace(/e/g, "");
+  var handleMouseMove = function handleMouseMove(e) {
+    e.stopPropagation();
+    updateNodeConnections();
+  };
 
-      if (!!inputValue) {
-        var value = parseFloat(inputValue);
+  var handleDragEnd = function handleDragEnd() {
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mouseup", handleDragEnd);
+  };
 
-        if (Number.isNaN(value)) {
-          _onChange(0);
-        } else {
-          _onChange(value);
-
-          if (numberInput.current) {
-            numberInput.current.value = value.toString();
-          }
-        }
-      }
-    },
-    onBlur: function onBlur(e) {
-      if (!e.target.value) {
-        _onChange(0);
-
-        if (numberInput.current) {
-          numberInput.current.value = "0";
-        }
-      }
-    },
-    step: step || "1",
-    onMouseDown: handlePossibleResize,
-    type: type || "text",
+  var commonProps = {
     placeholder: placeholder,
-    className: styles$6.input,
-    defaultValue: data,
+    onMouseDown: handlePossibleResize,
     onDragStart: function onDragStart(e) {
       return e.stopPropagation();
     },
-    ref: numberInput
-  }) : /*#__PURE__*/React.createElement("textarea", {
-    "data-flume-component": "text-input-textarea",
+    w: "100%",
+    maw: "100%",
+    size: "xs"
+  };
+
+  if (type === "number") {
+    return /*#__PURE__*/React.createElement(NumberInput, _objectSpread$9(_objectSpread$9({}, commonProps), {}, {
+      value: data,
+      onChange: function onChange(value) {
+        return _onChange(value || 0);
+      },
+      step: step || 1,
+      onKeyDown: function onKeyDown(e) {
+        if (e.key === "e" || e.key === "E") {
+          e.preventDefault();
+        }
+      },
+      "data-flume-component": "text-input-number"
+    }));
+  }
+
+  return /*#__PURE__*/React.createElement(Textarea, _objectSpread$9(_objectSpread$9({}, commonProps), {}, {
+    value: data,
     onChange: function onChange(e) {
       return _onChange(e.target.value);
     },
-    onMouseDown: handlePossibleResize,
-    placeholder: placeholder,
-    className: styles$6.input,
-    value: data,
-    onDragStart: function onDragStart(e) {
-      return e.stopPropagation();
-    }
+    "data-flume-component": "text-input-textarea"
   }));
-};
+}
 
 var css$5 = ".Select_wrapper__eAPoQ {\n  font-size: 14px;\n  padding: 3px 6px;\n  border-radius: 4px;\n  background: linear-gradient(to bottom, #6c7073, #838a8e);\n  width: 100%;\n  border: 1px solid #3c3e40;\n  padding-right: 15px;\n  position: relative;\n}\n  .Select_wrapper__eAPoQ::after {\n    content: \"\";\n    position: absolute;\n    background: none;\n    right: 5px;\n    top: 8px;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-width: 6px 5px 0 5px;\n    border-color: #191b1c transparent transparent transparent;\n  }\n  .Select_wrapper__eAPoQ:hover {\n    background: linear-gradient(to bottom, #7c8387, #969da1);\n  }\n.Select_chipWrapper__3hK2u {\n  font-size: 14px;\n  padding: 3px 6px;\n  border-radius: 4px;\n  background: linear-gradient(to top, #63676a, #787d80);\n  border: 1px solid #3c3e40;\n  margin: 2px;\n  position: relative;\n}\n.Select_chipWrapper__3hK2u:hover .Select_deleteButton__1FnLK {\n  opacity: 1;\n}\n.Select_chipsWrapper__4Alw8 {\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 6px;\n}\n.Select_deleteButton__1FnLK {\n  position: absolute;\n  right: 0px;\n  top: 0px;\n  height: 100%;\n  width: 22px;\n  padding: 0px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: linear-gradient(to top, #5b5f62, #6f7477);\n  border-radius: 3px;\n  border: none;\n  font-weight: bold;\n  opacity: 0;\n}\n.Select_deleteButton__1FnLK:focus {\n  opacity: 1;\n}\n.Select_deleteButton__1FnLK:hover {\n  background: linear-gradient(to top, #64696c, #797f82);\n}\n.Select_selectedWrapper__SUs4D {\n  display: flex;\n  flex-direction: column;\n  border-radius: 4px;\n  background: linear-gradient(to top, #5b5f62, #6f7477);\n  width: 100%;\n  border: 1px solid #3c3e40;\n  font-size: 14px;\n  padding: 3px 6px;\n  padding-right: 15px;\n  position: relative;\n}\n.Select_selectedWrapper__SUs4D::after {\n    content: \"\";\n    position: absolute;\n    background: none;\n    right: 5px;\n    top: calc(50% - 4px);\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-width: 6px 5px 0 5px;\n    border-color: #191b1c transparent transparent transparent;\n  }\n.Select_selectedWrapper__SUs4D label {\n    margin: 0px;\n  }\n.Select_selectedWrapper__SUs4D p {\n    margin: 0px;\n    margin-top: 5px;\n    font-size: 12px;\n    font-style: italic;\n    color: rgb(50, 50, 50);\n  }\n";
 var styles$5 = {"wrapper":"Select_wrapper__eAPoQ","chipWrapper":"Select_chipWrapper__3hK2u","deleteButton":"Select_deleteButton__1FnLK","chipsWrapper":"Select_chipsWrapper__4Alw8","selectedWrapper":"Select_selectedWrapper__SUs4D"};
@@ -6394,11 +6367,11 @@ var Control = function Control(props) {
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    className: styles$8.wrapper,
+    className: styles$7.wrapper,
     "data-flume-component": "control"
   }, calculatedLabel && type !== "checkbox" && type !== "custom" && /*#__PURE__*/React.createElement("label", {
     "data-flume-component": "control-label",
-    className: styles$8.controlLabel
+    className: styles$7.controlLabel
   }, calculatedLabel), getControlByType(type));
 };
 
@@ -6413,7 +6386,7 @@ var Connection = function Connection(_ref) {
       inputPortName = _ref.inputPortName;
   var curve = calculateCurve(from, to);
   return /*#__PURE__*/React.createElement("svg", {
-    className: styles$b.svg,
+    className: styles$a.svg,
     "data-flume-component": "connection-svg"
   }, /*#__PURE__*/React.createElement("path", {
     "data-connection-id": id,
@@ -6509,10 +6482,10 @@ var IoPorts = function IoPorts(_ref2) {
   var resolvedInputs = useTransputs(inputs, "input", nodeId, inputData, connections);
   var resolvedOutputs = useTransputs(outputs, "output", nodeId, inputData, connections);
   return /*#__PURE__*/React.createElement("div", {
-    className: styles$9.wrapper,
+    className: styles$8.wrapper,
     "data-flume-component": "ports"
   }, resolvedInputs.length ? /*#__PURE__*/React.createElement("div", {
-    className: styles$9.inputs,
+    className: styles$8.inputs,
     "data-flume-component": "ports-inputs"
   }, resolvedInputs.map(function (input) {
     return /*#__PURE__*/React.createElement(Input, _objectSpread$6(_objectSpread$6({}, input), {}, {
@@ -6526,7 +6499,7 @@ var IoPorts = function IoPorts(_ref2) {
       key: input.name
     }));
   })) : null, !!resolvedOutputs.length && /*#__PURE__*/React.createElement("div", {
-    className: styles$9.outputs,
+    className: styles$8.outputs,
     "data-flume-component": "ports-outputs"
   }, resolvedOutputs.map(function (output) {
     return /*#__PURE__*/React.createElement(Output, _objectSpread$6(_objectSpread$6({}, output), {}, {
@@ -6568,7 +6541,7 @@ var Input = function Input(_ref3) {
   }, [isConnected, prevConnected, triggerRecalculation]);
   return /*#__PURE__*/React.createElement("div", {
     "data-flume-component": "port-input",
-    className: styles$9.transput,
+    className: styles$8.transput,
     "data-controlless": isConnected || noControls || !controls.length,
     onDragStart: function onDragStart(e) {
       e.preventDefault();
@@ -6583,9 +6556,9 @@ var Input = function Input(_ref3) {
     triggerRecalculation: triggerRecalculation
   }) : null, (!controls.length || noControls || isConnected) && /*#__PURE__*/React.createElement("label", {
     "data-flume-component": "port-label",
-    className: styles$9.portLabel
+    className: styles$8.portLabel
   }, label || defaultLabel), !noControls && !isConnected ? /*#__PURE__*/React.createElement("div", {
-    className: styles$9.controls
+    className: styles$8.controls
   }, controls.map(function (control) {
     return /*#__PURE__*/React.createElement(Control, _objectSpread$6(_objectSpread$6({}, control), {}, {
       nodeId: nodeId,
@@ -6616,7 +6589,7 @@ var Output = function Output(_ref5) {
 
   return /*#__PURE__*/React.createElement("div", {
     "data-flume-component": "port-output",
-    className: styles$9.transput,
+    className: styles$8.transput,
     "data-controlless": true,
     onDragStart: function onDragStart(e) {
       e.preventDefault();
@@ -6624,7 +6597,7 @@ var Output = function Output(_ref5) {
     }
   }, /*#__PURE__*/React.createElement("label", {
     "data-flume-component": "port-label",
-    className: styles$9.portLabel
+    className: styles$8.portLabel
   }, label || defaultLabel), /*#__PURE__*/React.createElement(Port, {
     type: type,
     name: name,
@@ -6872,7 +6845,7 @@ var Port = function Port(_ref7) {
       position: "relative"
     },
     onMouseDown: handleDragStart,
-    className: styles$9.port,
+    className: styles$8.port,
     "data-port-color": color,
     "data-port-name": name,
     "data-port-type": type,
@@ -7084,7 +7057,7 @@ var Node = function Node(_ref) {
     }
   }, [appendage]);
   return /*#__PURE__*/React.createElement(Draggable, {
-    className: styles$a.wrapper,
+    className: styles$9.wrapper,
     style: {
       width: width,
       transform: "translate(".concat(x, "px, ").concat(y, "px)") // marginTop:
@@ -7148,7 +7121,7 @@ var NodeHeader = function NodeHeader(_ref6) {
       props = _objectWithoutProperties(_ref6, _excluded);
 
   return /*#__PURE__*/React.createElement("h2", _objectSpread$5(_objectSpread$5({}, props), {}, {
-    className: styles$a.label + (className ? " ".concat(className) : ""),
+    className: styles$9.label + (className ? " ".concat(className) : ""),
     "data-flume-component": "node-header"
   }), children);
 };

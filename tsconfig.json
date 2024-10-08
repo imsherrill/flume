@@ -14,7 +14,8 @@
     "strict": true,
     "noImplicitAny": false,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["@mantine/core"]
   },
   "exclude": ["dist"],
   "include": ["./src/**/*.ts", "./src/**/*.tsx", "src/*.d.ts"]

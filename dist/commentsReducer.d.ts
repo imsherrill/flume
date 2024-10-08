@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { Colors, FlumeComment } from "./types";
 declare type CommentMap = {
     [commentId: string]: FlumeComment;

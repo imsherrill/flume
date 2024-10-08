@@ -6,5 +6,5 @@ interface TextInputProps {
     step?: number;
     type?: "number" | "text";
 }
-declare const TextInput: ({ placeholder, updateNodeConnections, onChange, data, step, type }: TextInputProps) => JSX.Element;
+export declare function TextInput({ placeholder, updateNodeConnections, onChange, data, step, type }: TextInputProps): JSX.Element;
 export default TextInput;
